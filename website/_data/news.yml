@@ -1,0 +1,64 @@
+# ============================================================
+# news.yml
+# Akpoué Kouamé Josué — Actualités scientifiques
+# ============================================================
+# Types : announcement | release | publication | talk | submission
+# Pour ajouter une entrée : copier un bloc, modifier les champs
+# Les 3 premières entrées s'affichent sur la homepage
+# ============================================================
+
+- id: news_wriml_org_2026
+  year: 2026
+  month: "May"
+  type: announcement
+  class: WRIML
+  title:
+    en: "Launch of the WRIML Project GitHub organization"
+    fr: "Création de l'organisation GitHub WRIML Project"
+  url: "https://github.com/wriml"
+
+- id: news_wriml_core_v3_2026
+  year: 2026
+  month: "May"
+  type: release
+  class: WRIML
+  title:
+    en: "WRIML Core v3.0"
+    fr: "WRIML Core v3.0"
+  url: "https://dbjoshua.github.io/WRIML"
+
+- id: news_latex_talk_2026
+  year: 2026
+  month: "May"
+  type: talk
+  class: keynote
+  title:
+    en: "Scientific writing with LaTeX: An opportunity for authors and journals (Parts 1 & 2)"
+    fr: "La rédaction scientifique avec LaTeX : opportunité pour les auteurs et les revues (Parties 1 & 2)"
+  event:
+    en: "WeTalk Weekly Conferences — American Space, UFHB"
+    fr: "Conférences hebdomadaires du WeTalk — American Space, UFHB"
+  url: "https://github.com/dbjoshua/linguists-tex"
+
+- id: news_tense_talk_2026
+  year: 2026
+  month: "February"
+  type: talk
+  class: keynote
+  title:
+    en: "Grammatical tense in Kwa languages: Concordism bias or empirical reality?"
+    fr: "Les temps grammaticaux dans les langues Kwa : biais de concordisme ou réalité empirique ?"
+  event:
+    en: "WeTalk Weekly Conferences — American Space, UFHB"
+    fr: "Conférences hebdomadaires du WeTalk — American Space, UFHB"
+  url:
+
+- id: news_zigsem_2025
+  year: 2025
+  month: "December"
+  type: publication
+  class: article
+  title:
+    en: "Introduction to minimalist semantics — published in Ziglôbitha"
+    fr: "Introduction à la sémantique minimaliste — publié dans Ziglôbitha"
+  url: "https://doi.org/10.60632/ziglobitha.n016.22.vol.3.2025"

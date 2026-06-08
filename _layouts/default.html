@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'en' }}" data-theme="light">
+<head>
+  {% include head.html %}
+</head>
+<body>
+
+  {% include nav.html %}
+
+  <main id="main-content" role="main">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <!-- ============================================================
+       SCROLL TO TOP
+       Bouton flottant — visible après 400px de scroll
+       ============================================================ -->
+  <button
+    class="scroll-top"
+    id="scroll-top"
+    aria-label="Retour en haut / Back to top"
+    title="Back to top"
+    hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+         aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <!-- ============================================================
+       JS GLOBAL
+       - Dark mode toggle (persistance localStorage)
+       - Burger menu mobile
+       - Nav scroll shadow
+       - Scroll to top
+       - Page fade-in
+       ============================================================ -->
+  <script>
+  (function () {
+
+    /* ── 1. Dark mode ── */
+    const html       = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
+    const saved      = localStorage.getItem('theme');
+
+    // Appliquer le thème sauvegardé avant le premier rendu
+    if (saved) html.setAttribute('data-theme', saved);
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const current = html.getAttribute('data-theme') || 'light';
+        const next    = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+      });
+    }
+
+    /* ── 2. Burger menu mobile ── */
+    const burger   = document.getElementById('nav-burger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (burger && navLinks) {
+      burger.addEventListener('click', () => {
+        const expanded = burger.getAttribute('aria-expanded') === 'true';
+        burger.setAttribute('aria-expanded', String(!expanded));
+        navLinks.classList.toggle('nav-links--open');
+      });
+
+      // Fermer le menu au clic sur un lien
+      navLinks.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('nav-links--open');
+          burger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    /* ── 3. Nav scroll shadow ── */
+    const nav = document.getElementById('site-nav');
+    if (nav) {
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('nav--scrolled', window.scrollY > 10);
+      }, { passive: true });
+    }
+
+    /* ── 4. Scroll to top ── */
+    const scrollBtn = document.getElementById('scroll-top');
+    if (scrollBtn) {
+      window.addEventListener('scroll', () => {
+        scrollBtn.hidden = window.scrollY < 400;
+      }, { passive: true });
+
+      scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    /* ── 5. Page fade-in ── */
+    // Déclenché après le chargement complet
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('page--loaded');
+    });
+
+    /* ── 6. Lien actif dans la nav ── */
+    // Marque le lien correspondant à la page courante
+    const currentPath = window.location.pathname;
+    document.querySelectorAll('.nav-link').forEach(link => {
+      if (link.getAttribute('href') &&
+          currentPath.includes(link.getAttribute('href'))) {
+        link.classList.add('active');
+      }
+    });
+
+  })();
+  </script>
+
+</body>
+</html>

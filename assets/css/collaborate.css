@@ -1,0 +1,231 @@
+/* ============================================================
+   COLLABORATE.CSS — Page Collaborer / Collaborate
+   Akpoué Kouamé Josué — Site académique
+   ============================================================
+   Gère :
+   - Appels à collaboration (.collab-calls, .collab-call)
+   - Liste de thématiques (.collab-topics, .topic-list)
+   - Supervision (.supervision-areas, .supervision-block)
+   - Contact (.contact-block, .contact-item, .contact-email)
+   Réutilise depuis research.css :
+   - .program-details (programme collapsible)
+   - .prose, .prose--sm
+   ============================================================ -->
+
+
+/* ============================================================
+   APPELS À COLLABORATION
+   ============================================================ */
+
+.collab-calls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.collab-call {
+  padding: var(--space-lg);
+  border: var(--border-thin) var(--border);
+  border-radius: var(--radius-md);
+  background-color: var(--bg);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.collab-call:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.collab-call__header {
+  margin-bottom: var(--space-md);
+}
+
+/* Programme collapsible — réutilise .program-details de research.css */
+.program-details {
+  margin-top: var(--space-xl);
+}
+
+
+/* ============================================================
+   THÉMATIQUES OUVERTES
+   ============================================================ */
+
+.collab-topics {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg);
+  background-color: var(--bg-alt);
+  border-radius: var(--radius-md);
+  border: var(--border-thin) var(--border);
+}
+
+.collab-topics .label {
+  display: block;
+  margin-bottom: var(--space-md);
+}
+
+.topic-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: 0;
+}
+
+.topic-list li {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-light);
+  color: var(--text-muted);
+  background-color: var(--bg);
+  border: var(--border-thin) var(--border);
+  border-radius: var(--radius-pill);
+  padding: 3px var(--space-3);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.topic-list li:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+
+/* ============================================================
+   SUPERVISION
+   ============================================================ */
+
+.supervision-areas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  margin-top: var(--space-xl);
+}
+
+.supervision-block__title {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-2);
+  border-bottom: var(--border-thin) var(--border);
+}
+
+.supervision-list {
+  padding-left: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.supervision-list li {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-light);
+  line-height: var(--leading-normal);
+  color: var(--text);
+}
+
+/* Liste ordonnée — numéros en canard */
+.supervision-list--ordered {
+  list-style: decimal;
+}
+
+.supervision-list--ordered li::marker {
+  color: var(--accent);
+  font-weight: var(--weight-semibold);
+}
+
+.supervision-note {
+  margin-top: var(--space-xl);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+
+.contact-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  margin-top: var(--space-lg);
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.contact-email {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-light);
+  color: var(--text);
+  letter-spacing: var(--tracking-tight);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: var(--space-1);
+  display: inline-block;
+  transition: color var(--transition-fast);
+}
+
+.contact-email:hover {
+  color: var(--accent);
+}
+
+.contact-note {
+  color: var(--text-muted);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .collab-calls {
+    grid-template-columns: 1fr;
+  }
+
+  .supervision-areas {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .contact-block {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .contact-email {
+    font-size: var(--text-md);
+  }
+
+  .topic-list {
+    gap: var(--space-1);
+  }
+}
+
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+
+@media print {
+  .collab-calls {
+    grid-template-columns: 1fr;
+  }
+
+  .supervision-areas {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-block {
+    grid-template-columns: 1fr;
+  }
+
+  .program-details {
+    display: none;
+  }
+}

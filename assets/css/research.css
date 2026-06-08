@@ -1,0 +1,275 @@
+/* ============================================================
+   RESEARCH.CSS — Page Recherche / Research
+   Akpoué Kouamé Josué — Site académique
+   ============================================================
+   Gère :
+   - Axes de recherche (.research-axis)
+   - Entrées de recherche (.research-item)
+   - Projets (.projects-list, .project-item)
+   - Titre de section avec sous-titre (.section-title__sub)
+   - Programme collapsible (.program-details)
+   - Prose réduite (.prose--sm)
+   ============================================================ */
+
+
+/* ============================================================
+   TITRE DE SECTION AVEC SOUS-TITRE
+   ============================================================ */
+
+.section-title__sub {
+  display: inline-block;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-light);
+  color: var(--text-muted);
+  margin-left: var(--space-3);
+  letter-spacing: 0;
+}
+
+
+/* ============================================================
+   PROSE RÉDUITE
+   ============================================================
+   Variante plus compacte de .prose pour les descriptions
+   de recherche et de projets.
+   ============================================================ */
+
+.prose--sm {
+  font-size: var(--text-sm);
+  line-height: var(--leading-loose);
+  max-width: 72ch;
+}
+
+.prose--sm p + p {
+  margin-top: var(--space-3);
+}
+
+.prose ul {
+  padding-left: var(--space-lg);
+  margin-top: var(--space-3);
+}
+
+.prose ul li {
+  margin-bottom: var(--space-2);
+  line-height: var(--leading-loose);
+}
+
+.prose h3 {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-3);
+  color: var(--text);
+}
+
+.prose strong {
+  font-weight: var(--weight-semibold);
+  color: var(--text);
+}
+
+
+/* ============================================================
+   AXES DE RECHERCHE
+   ============================================================ */
+
+.research-axis {
+  margin-bottom: var(--space-2xl);
+}
+
+.research-axis:last-child {
+  margin-bottom: 0;
+}
+
+.axis-title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--text);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-3);
+  border-bottom: var(--border-thin) var(--border);
+}
+
+.axis-title .label {
+  font-size: var(--text-xs);
+}
+
+
+/* ============================================================
+   ENTRÉES DE RECHERCHE
+   ============================================================ -->
+
+.research-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.research-item {
+  padding: var(--space-lg);
+  border: var(--border-thin) var(--border);
+  border-radius: var(--radius-md);
+  background-color: var(--bg);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.research-item:hover {
+  border-color: var(--color-canard);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Transversal — légère distinction visuelle */
+.research-item--transversal {
+  border-left: 3px solid var(--accent);
+}
+
+.research-item__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.research-item__title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--text);
+  line-height: var(--leading-tight);
+}
+
+.research-item__badges {
+  display: flex;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   PROJETS EN COURS
+   ============================================================ */
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.project-item {
+  padding-bottom: var(--space-xl);
+  border-bottom: var(--border-thin) var(--border);
+}
+
+.project-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.project-item__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.project-item__title {
+  font-size: var(--text-md);
+  font-weight: var(--weight-medium);
+  color: var(--text);
+  line-height: var(--leading-tight);
+  flex: 1;
+}
+
+/* Sous-label "Parallel program", "Sub-program" */
+.project-item__sub {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  color: var(--text-muted);
+  letter-spacing: var(--tracking-wide);
+  margin-top: var(--space-1);
+}
+
+
+/* ============================================================
+   PROGRAMME COLLAPSIBLE
+   ============================================================
+   Utilise l'élément HTML natif <details> / <summary>.
+   Pas de JS nécessaire.
+   ============================================================ */
+
+.program-details {
+  margin-top: var(--space-xl);
+  border: var(--border-thin) var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.program-details[open] {
+  border-color: var(--accent);
+}
+
+.program-details__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  font-family: var(--font-interface);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--accent);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: background-color var(--transition-fast);
+}
+
+.program-details__toggle:hover {
+  background-color: var(--color-canard-pale);
+}
+
+/* Masquer le triangle natif sur tous les navigateurs */
+.program-details__toggle::-webkit-details-marker { display: none; }
+
+.program-details__toggle svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transition: transform var(--transition-mid);
+}
+
+.program-details[open] .program-details__toggle svg {
+  transform: rotate(180deg);
+}
+
+.program-details__content {
+  padding: var(--space-xl) var(--space-lg);
+  border-top: var(--border-thin) var(--border);
+  background-color: var(--bg-alt);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .research-item__header {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .project-item__header {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .axis-title {
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+}

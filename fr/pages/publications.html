@@ -1,0 +1,218 @@
+---
+layout: page
+lang: fr
+alt_url: "pages/publications.html"
+title: "Publications & Communications"
+subtitle: "Articles, actes de conférence, communications, publications web et matériaux de terrain."
+label: "Akpoué Kouamé Josué"
+description: "Liste complète des publications et communications d'Akpoué Kouamé Josué — sémantique formelle, langues Kwa, langues ivoiriennes."
+css:
+  - publications.css
+---
+
+<!-- ============================================================
+     PUBLICATIONS & COMMUNICATIONS — fr/pages/publications.html
+     ============================================================ -->
+
+
+<!-- 1. ARTICLES À COMITÉ -->
+<section class="section" id="articles">
+  <div class="section-header">
+    <h2 class="section-title">Articles à comité de lecture</h2>
+  </div>
+
+  <div class="pub-list">
+    {% assign articles = site.data.publications | where: "type", "article" | sort: "year" | reverse %}
+    {% for pub in articles %}
+      <article class="pub-entry" id="{{ pub.id }}">
+
+        <div class="pub-entry__year">
+          <span class="meta">{{ pub.year }}</span>
+        </div>
+
+        <div class="pub-entry__body">
+          <p class="pub-entry__title">
+            {% if pub.doi %}
+              <a href="{{ pub.doi }}" target="_blank" rel="noopener">
+                {{ pub.title.fr }}
+              </a>
+            {% else %}
+              {{ pub.title.fr }}
+            {% endif %}
+          </p>
+          <p class="pub-entry__authors meta">{{ pub.authors.fr }}</p>
+          <p class="pub-entry__ref meta">
+            {% if pub.journal %}<em>{{ pub.journal }}</em>{% endif %}
+            {% if pub.series %}, {{ pub.series.fr }}{% endif %}
+            {% if pub.booktitle %}<em>{{ pub.booktitle.fr }}</em>{% endif %}
+            {% if pub.volume %}, {{ pub.volume }}{% endif %}
+            {% if pub.issue %}({{ pub.issue }}){% endif %}
+            {% if pub.pages %}, pp.&nbsp;{{ pub.pages }}{% endif %}
+            {% if pub.publisher %}, {{ pub.publisher }}{% endif %}
+          </p>
+          {% if pub.doi %}
+            <div class="pub-entry__links">
+              <a href="{{ pub.doi }}" class="pub-link"
+                 target="_blank" rel="noopener">DOI →</a>
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="pub-entry__badge">
+          <span class="badge badge--article">article</span>
+        </div>
+
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+
+<!-- 2. ACTES DE CONFÉRENCE -->
+<section class="section section--alt" id="actes">
+  <div class="section-header">
+    <h2 class="section-title">Actes de conférence</h2>
+    <p class="section-subtitle">Non évalués par les pairs</p>
+  </div>
+
+  <div class="pub-list">
+    {% assign proceedings = site.data.publications | where: "type", "proceedings" | sort: "year" | reverse %}
+    {% for pub in proceedings %}
+      <article class="pub-entry" id="{{ pub.id }}">
+
+        <div class="pub-entry__year">
+          <span class="meta">{{ pub.year }}</span>
+        </div>
+
+        <div class="pub-entry__body">
+          <p class="pub-entry__title">{{ pub.title.fr }}</p>
+          <p class="pub-entry__authors meta">{{ pub.authors.fr }}</p>
+          <p class="pub-entry__ref meta">
+            {% if pub.booktitle %}<em>{{ pub.booktitle.fr }}</em>{% endif %}
+            {% if pub.pages %}, pp.&nbsp;{{ pub.pages }}{% endif %}
+          </p>
+          {% if pub.doi %}
+            <div class="pub-entry__links">
+              <a href="{{ pub.doi }}" class="pub-link"
+                 target="_blank" rel="noopener">DOI →</a>
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="pub-entry__badge">
+          <span class="badge badge--chapter">actes</span>
+        </div>
+
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+
+<!-- 3. COMMUNICATIONS -->
+<section class="section" id="communications">
+  <div class="section-header">
+    <h2 class="section-title">Communications & conférences</h2>
+  </div>
+
+  <div class="pub-list">
+    {% assign talks = site.data.talks | sort: "year" | reverse %}
+    {% for talk in talks %}
+      <article class="pub-entry" id="{{ talk.id }}">
+
+        <div class="pub-entry__year">
+          <span class="meta">
+            {% if talk.month %}{{ talk.month }} {% endif %}{{ talk.year }}
+          </span>
+        </div>
+
+        <div class="pub-entry__body">
+          <p class="pub-entry__title">{{ talk.title.fr }}</p>
+          <p class="pub-entry__authors meta">{{ talk.authors.fr }}</p>
+          <p class="pub-entry__ref meta">
+            <em>{{ talk.event.fr }}</em>
+            {% if talk.location %}, {{ talk.location }}{% endif %}
+          </p>
+          {% if talk.resources %}
+            <div class="pub-entry__links">
+              <a href="{{ talk.resources }}" class="pub-link"
+                 target="_blank" rel="noopener">Ressources →</a>
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="pub-entry__badge">
+          {% if talk.type == 'keynote' %}
+            <span class="badge badge--talk">keynote</span>
+          {% else %}
+            <span class="badge badge--talk">communication</span>
+          {% endif %}
+          {% if talk.scope == 'international' %}
+            <span class="badge badge--intl">intl</span>
+          {% endif %}
+        </div>
+
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+
+<!-- 4. PUBLICATIONS WEB -->
+<section class="section section--alt" id="web">
+  <div class="section-header">
+    <h2 class="section-title">Publications web</h2>
+  </div>
+
+  <div class="pub-list">
+    {% assign webpubs = site.data.publications | where: "type", "web" | sort: "year" | reverse %}
+    {% for pub in webpubs %}
+      <article class="pub-entry" id="{{ pub.id }}">
+
+        <div class="pub-entry__year">
+          <span class="meta">{{ pub.year }}</span>
+        </div>
+
+        <div class="pub-entry__body">
+          <p class="pub-entry__title">
+            {% if pub.url %}
+              <a href="{{ pub.url }}" target="_blank" rel="noopener">
+                {{ pub.title.fr }}
+              </a>
+            {% else %}
+              {{ pub.title.fr }}
+            {% endif %}
+          </p>
+          <p class="pub-entry__authors meta">{{ pub.authors.fr }}</p>
+          {% if pub.platform %}
+            <p class="pub-entry__ref meta">{{ pub.platform }}</p>
+          {% endif %}
+          {% if pub.url %}
+            <div class="pub-entry__links">
+              <a href="{{ pub.url }}" class="pub-link"
+                 target="_blank" rel="noopener">Consulter →</a>
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="pub-entry__badge">
+          <span class="badge badge--web">web</span>
+        </div>
+
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+
+<!-- 5. MATÉRIAUX DE TERRAIN -->
+<section class="section" id="materiaux">
+  <div class="section-header">
+    <h2 class="section-title">Matériaux de terrain</h2>
+  </div>
+  <p class="prose">
+    Les outils d'enquête et données de recherche (storyboards, picture sets,
+    questionnaires) sont documentés sur la
+    <a href="{{ site.baseurl }}/fr/pages/terrain.html">page Terrain</a>.
+  </p>
+</section>

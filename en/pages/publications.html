@@ -1,0 +1,242 @@
+---
+layout: page
+lang: en
+alt_url: "pages/publications.html"
+title: "Publications & Talks"
+subtitle: "Articles, conference proceedings, talks, web publications, and fieldwork materials."
+label: "Akpoué Kouamé Josué"
+description: "Full list of publications and talks by Akpoué Kouamé Josué — formal semantics, Kwa languages, Ivorian languages."
+css:
+  - publications.css
+---
+
+<!-- ============================================================
+     PUBLICATIONS & TALKS — en/pages/publications.html
+     ============================================================
+     SECTIONS :
+     1. Peer-reviewed articles       (_data/publications.yml, type: article)
+     2. Conference proceedings       (_data/publications.yml, type: proceedings)
+     3. Talks & presentations        (_data/talks.yml)
+     4. Web publications             (_data/publications.yml, type: web)
+     5. Fieldwork materials          → lien vers fieldwork.html
+     ============================================================
+     AJOUTER UNE ENTRÉE :
+     - Publication → _data/publications.yml
+     - Talk        → _data/talks.yml
+     Le HTML ne change pas.
+     ============================================================ -->
+
+
+<!-- ============================================================
+     1. PEER-REVIEWED ARTICLES
+     ============================================================ -->
+<section class="section" id="articles">
+  <div class="section-header">
+    <h2 class="section-title">Peer-reviewed articles</h2>
+  </div>
+
+  <div class="pub-list">
+    {% assign articles = site.data.publications | where: "type", "article" | sort: "year" | reverse %}
+    {% for pub in articles %}
+      <article class="pub-entry" id="{{ pub.id }}">
+
+        <div class="pub-entry__year">
+          <span class="meta">{{ pub.year }}</span>
+        </div>
+
+        <div class="pub-entry__body">
+          <p class="pub-entry__title">
+            {% if pub.doi %}
+              <a href="{{ pub.doi }}" target="_blank" rel="noopener">
+                {{ pub.title.en }}
+              </a>
+            {% else %}
+              {{ pub.title.en }}
+            {% endif %}
+          </p>
+
+          <p class="pub-entry__authors meta">{{ pub.authors.en }}</p>
+
+          <p class="pub-entry__ref meta">
+            {% if pub.journal %}<em>{{ pub.journal }}</em>{% endif %}
+            {% if pub.series %}, {{ pub.series.en }}{% endif %}
+            {% if pub.booktitle %}<em>{{ pub.booktitle.en }}</em>{% endif %}
+            {% if pub.volume %}, {{ pub.volume }}{% endif %}
+            {% if pub.issue %}({{ pub.issue }}){% endif %}
+            {% if pub.pages %}, pp.&nbsp;{{ pub.pages }}{% endif %}
+            {% if pub.publisher %}, {{ pub.publisher }}{% endif %}
+          </p>
+
+          <div class="pub-entry__links">
+            {% if pub.doi %}
+              <a href="{{ pub.doi }}" class="pub-link" target="_blank" rel="noopener">
+                DOI →
+              </a>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="pub-entry__badge">
+          <span class="badge badge--article">article</span>
+        </div>
+
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+
+<!-- ============================================================
+     2. CONFERENCE PROCEEDINGS
+     ============================================================ -->
+<section class="section section--alt" id="proceedings">
+  <div class="section-header">
+    <h2 class="section-title">Conference proceedings</h2>
+    <p class="section-subtitle">Non peer-reviewed</p>
+  </div>
+
+  <div class="pub-list">
+    {% assign proceedings = site.data.publications | where: "type", "proceedings" | sort: "year" | reverse %}
+    {% for pub in proceedings %}
+      <article class="pub-entry" id="{{ pub.id }}">
+
+        <div class="pub-entry__year">
+          <span class="meta">{{ pub.year }}</span>
+        </div>
+
+        <div class="pub-entry__body">
+          <p class="pub-entry__title">{{ pub.title.en }}</p>
+          <p class="pub-entry__authors meta">{{ pub.authors.en }}</p>
+          <p class="pub-entry__ref meta">
+            {% if pub.booktitle %}<em>{{ pub.booktitle.en }}</em>{% endif %}
+            {% if pub.pages %}, pp.&nbsp;{{ pub.pages }}{% endif %}
+          </p>
+          {% if pub.doi %}
+            <div class="pub-entry__links">
+              <a href="{{ pub.doi }}" class="pub-link" target="_blank" rel="noopener">DOI →</a>
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="pub-entry__badge">
+          <span class="badge badge--chapter">proceedings</span>
+        </div>
+
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+
+<!-- ============================================================
+     3. TALKS & CONFERENCE PRESENTATIONS
+     ============================================================ -->
+<section class="section" id="talks">
+  <div class="section-header">
+    <h2 class="section-title">Talks & conference presentations</h2>
+  </div>
+
+  <div class="pub-list">
+    {% assign talks = site.data.talks | sort: "year" | reverse %}
+    {% for talk in talks %}
+      <article class="pub-entry" id="{{ talk.id }}">
+
+        <div class="pub-entry__year">
+          <span class="meta">
+            {% if talk.month %}{{ talk.month }} {% endif %}{{ talk.year }}
+          </span>
+        </div>
+
+        <div class="pub-entry__body">
+          <p class="pub-entry__title">{{ talk.title.en }}</p>
+          <p class="pub-entry__authors meta">{{ talk.authors.en }}</p>
+          <p class="pub-entry__ref meta">
+            <em>{{ talk.event.en }}</em>{% if talk.location %}, {{ talk.location }}{% endif %}
+          </p>
+          {% if talk.resources %}
+            <div class="pub-entry__links">
+              <a href="{{ talk.resources }}" class="pub-link"
+                 target="_blank" rel="noopener">Resources →</a>
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="pub-entry__badge">
+          {% if talk.type == 'keynote' %}
+            <span class="badge badge--talk">keynote</span>
+          {% else %}
+            <span class="badge badge--talk">talk</span>
+          {% endif %}
+          {% if talk.scope == 'international' %}
+            <span class="badge badge--intl">intl</span>
+          {% endif %}
+        </div>
+
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+
+<!-- ============================================================
+     4. WEB PUBLICATIONS
+     ============================================================ -->
+<section class="section section--alt" id="web">
+  <div class="section-header">
+    <h2 class="section-title">Web publications</h2>
+  </div>
+
+  <div class="pub-list">
+    {% assign webpubs = site.data.publications | where: "type", "web" | sort: "year" | reverse %}
+    {% for pub in webpubs %}
+      <article class="pub-entry" id="{{ pub.id }}">
+
+        <div class="pub-entry__year">
+          <span class="meta">{{ pub.year }}</span>
+        </div>
+
+        <div class="pub-entry__body">
+          <p class="pub-entry__title">
+            {% if pub.url %}
+              <a href="{{ pub.url }}" target="_blank" rel="noopener">
+                {{ pub.title.en }}
+              </a>
+            {% else %}
+              {{ pub.title.en }}
+            {% endif %}
+          </p>
+          <p class="pub-entry__authors meta">{{ pub.authors.en }}</p>
+          {% if pub.platform %}
+            <p class="pub-entry__ref meta">{{ pub.platform }}</p>
+          {% endif %}
+          {% if pub.url %}
+            <div class="pub-entry__links">
+              <a href="{{ pub.url }}" class="pub-link"
+                 target="_blank" rel="noopener">View →</a>
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="pub-entry__badge">
+          <span class="badge badge--web">web</span>
+        </div>
+
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+
+<!-- ============================================================
+     5. FIELDWORK MATERIALS
+     ============================================================ -->
+<section class="section" id="materials">
+  <div class="section-header">
+    <h2 class="section-title">Fieldwork materials</h2>
+  </div>
+  <p class="prose">
+    Elicitation tools and research data (storyboards, picture sets,
+    questionnaires) are documented on the
+    <a href="{{ site.baseurl }}/en/pages/fieldwork.html">Fieldwork page</a>.
+  </p>
+</section>

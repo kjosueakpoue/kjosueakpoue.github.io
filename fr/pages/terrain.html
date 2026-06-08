@@ -1,0 +1,167 @@
+---
+layout: page
+lang: fr
+alt_url: "pages/fieldwork.html"
+title: "Terrain"
+subtitle: "Expérience de terrain, outils d'enquête et données de recherche."
+label: "Akpoué Kouamé Josué"
+description: "Expérience de terrain et outils d'enquête d'Akpoué Kouamé Josué — langues ivoiriennes, langues Kwa, TAM, coordination, sémantique nominale."
+css:
+  - fieldwork.css
+---
+
+<!-- ============================================================
+     TERRAIN — fr/pages/terrain.html
+     ============================================================ -->
+
+
+<!-- 1. EXPÉRIENCE DE TERRAIN -->
+<section class="section" id="experience">
+  <div class="section-header">
+    <h2 class="section-title">Expérience de terrain</h2>
+    <p class="section-subtitle">
+      Mes travaux théoriques sont ancrés dans un terrain de première main.
+      Depuis 2016, j'ai conduit ou participé à des sessions de terrain sur
+      six langues ivoiriennes, principalement en Côte d'Ivoire.
+    </p>
+  </div>
+
+  <div class="fieldwork-table-wrap">
+    <table class="fieldwork-table">
+      <thead>
+        <tr>
+          <th>Année</th>
+          <th>Lieu</th>
+          <th>Langue</th>
+          <th>Rôle</th>
+          <th>Sujet</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for session in site.data.fieldwork.fieldwork_sessions %}
+          <tr>
+            <td class="meta fw-year">
+              {% if session.year_start %}
+                {{ session.year_start }}–{{ session.year_end }}
+              {% else %}
+                {{ session.year }}
+              {% endif %}
+            </td>
+            <td>{{ session.location.fr }}</td>
+            <td><strong>{{ session.language }}</strong></td>
+            <td class="meta">{{ session.role.fr }}</td>
+            <td class="meta">{{ session.focus.fr }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- 2. OUTILS D'ENQUÊTE -->
+<section class="section section--alt" id="outils">
+  <div class="section-header">
+    <h2 class="section-title">Outils d'enquête</h2>
+    <p class="section-subtitle">
+      Matériaux d'enquête développés pour le travail de terrain en
+      sémantique formelle sur les langues ivoiriennes. Tous les matériaux
+      produits par l'auteur sont librement disponibles pour réutilisation.
+    </p>
+  </div>
+
+  <!-- 2a. Produits par l'auteur -->
+  <h3 class="tools-subhead">Matériaux produits par l'auteur</h3>
+
+  <div class="elicitation-list">
+    {% assign author_tools = site.data.fieldwork.elicitation_tools
+       | where: "produced_by", "author" %}
+    {% for tool in author_tools %}
+      <article class="elicitation-entry">
+
+        <div class="elicitation-entry__header">
+          <div class="elicitation-entry__title-wrap">
+            <h4 class="elicitation-entry__title">{{ tool.title }}</h4>
+            {% if tool.version %}
+              <span class="badge badge--release">{{ tool.version }}</span>
+            {% endif %}
+            <span class="badge badge--release">{{ tool.type }}</span>
+          </div>
+          <div class="elicitation-entry__meta">
+            <span class="meta">{{ tool.year }}</span>
+            {% if tool.license %}
+              <span class="badge badge--chapter">{{ tool.license }}</span>
+            {% endif %}
+          </div>
+        </div>
+
+        <p class="elicitation-entry__targets">
+          <strong>Cible :</strong> {{ tool.targets.fr }}
+        </p>
+
+        <div class="elicitation-entry__links">
+          {% if tool.url %}
+            <a href="{{ tool.url }}" class="pub-link"
+               target="_blank" rel="noopener">
+              {{ tool.platform }} →
+            </a>
+          {% endif %}
+        </div>
+
+      </article>
+    {% endfor %}
+  </div>
+
+  <!-- 2b. Outils externes -->
+  <h3 class="tools-subhead tools-subhead--mt">Outils externes utilisés</h3>
+
+  <div class="elicitation-list">
+    {% assign external_tools = site.data.fieldwork.elicitation_tools
+       | where: "produced_by", "external" %}
+    {% for tool in external_tools %}
+      <article class="elicitation-entry elicitation-entry--external">
+
+        <div class="elicitation-entry__header">
+          <div class="elicitation-entry__title-wrap">
+            <h4 class="elicitation-entry__title">{{ tool.title }}</h4>
+            <span class="badge badge--chapter">{{ tool.type }}</span>
+          </div>
+          {% if tool.authors_external %}
+            <span class="meta">{{ tool.authors_external }}</span>
+          {% endif %}
+        </div>
+
+        <p class="elicitation-entry__targets">
+          <strong>Cible :</strong> {{ tool.targets.fr }}
+        </p>
+
+        <p class="elicitation-entry__targets meta">
+          Utilisé pour : {{ tool.used_for.fr }}
+        </p>
+
+        {% if tool.url %}
+          <div class="elicitation-entry__links">
+            <a href="{{ tool.url }}" class="pub-link"
+               target="_blank" rel="noopener">Voir →</a>
+          </div>
+        {% endif %}
+
+      </article>
+    {% endfor %}
+  </div>
+
+</section>
+
+
+<!-- 3. DONNÉES DE RECHERCHE -->
+<section class="section" id="donnees">
+  <div class="section-header">
+    <h2 class="section-title">Données de recherche</h2>
+  </div>
+  <p class="prose">
+    Les données de corpus, enregistrements de terrain annotés et résultats
+    d'élicitation seront mis à disposition ici au fur et à mesure de leur
+    préparation pour la distribution.
+    <span class="meta"> — À venir.</span>
+  </p>
+</section>

@@ -1,0 +1,239 @@
+# ============================================================
+# publications.yml
+# Akpoué Kouamé Josué — Publications
+# ============================================================
+# Types : article | proceedings | web
+# Scope : (non utilisé ici — réservé aux talks)
+# Pour ajouter une entrée : copier un bloc, modifier les champs
+# ============================================================
+
+# ------------------------------------------------------------
+# PEER-REVIEWED ARTICLES
+# ------------------------------------------------------------
+
+- id: akpoue2025zigsem
+  year: 2025
+  type: article
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "Introduction to minimalist semantics"
+    fr: "Introduction à la sémantique minimaliste"
+  journal: "Ziglôbitha"
+  volume: 16
+  issue: 3
+  pages: "319–338"
+  doi: "https://doi.org/10.60632/ziglobitha.n016.22.vol.3.2025"
+
+- id: akpoue2022ltml_coord
+  year: 2022
+  type: article
+  authors:
+    en: "Akpoué, K. J. & Kpami Boni, C. M."
+    fr: "Akpoué, K. J. & Kpami Boni, C. M."
+  title:
+    en: "Structure of conjunctive coordination of DPs in Modjukru"
+    fr: "Structure de la coordination conjonctive des DP en Modjukru"
+  journal: "Revue du LTML"
+  volume: 18
+  pages: "206–228"
+  doi:
+
+- id: akpoue2022ltml_names
+  year: 2022
+  type: article
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "On the meaning of proper names and proper pronouns"
+    fr: "De la signification des noms et pronoms propres"
+  journal: "Revue du LTML"
+  series:
+    en: "Hors-série 1 — Actes ABILANG 4 (2021)"
+    fr: "Hors-série 1 — Actes ABILANG 4 (2021)"
+  pages: "127–144"
+  doi:
+
+- id: akpoue2022ltml_neocomp
+  year: 2022
+  type: article
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "Towards a formal componential semantics: Introduction to neo-componential semantics"
+    fr: "Pour une sémantique formelle componentielle : Introduction à la sémantique néo-componentielle"
+  journal: "Revue du LTML"
+  series:
+    en: "Hors-série 1 — Actes ABILANG 4 (2021)"
+    fr: "Hors-série 1 — Actes ABILANG 4 (2021)"
+  pages: "5–26"
+  doi:
+
+- id: akpoue2022ltml_def
+  year: 2022
+  type: article
+  authors:
+    en: "Akpoué, K. J. & Kouakou N'Guessan, G."
+    fr: "Akpoué, K. J. & Kouakou N'Guessan, G."
+  title:
+    en: "Remarks on definiteness in Baule"
+    fr: "Remarques sur la définitude en Baoulé"
+  journal: "Revue du LTML"
+  series:
+    en: "Hors-série 1 — Actes ABILANG 4 (2021)"
+    fr: "Hors-série 1 — Actes ABILANG 4 (2021)"
+  pages: "145–165"
+  doi:
+
+- id: akpoue2020harmattan_def
+  year: 2020
+  type: article
+  authors:
+    en: "Akpoué, K. J. & Kouakou N'Guessan, G."
+    fr: "Akpoué, K. J. & Kouakou N'Guessan, G."
+  title:
+    en: "Definiteness in Baule: A formal introduction"
+    fr: "La définitude en baoulé : une introduction formelle"
+  booktitle:
+    en: "The roles of West-African languages: Development and integration"
+    fr: "Rôles des langues d'Afrique de l'Ouest : Développement et intégration"
+  series:
+    en: "Col. Études africaines"
+    fr: "Col. Études africaines"
+  publisher: "L'Harmattan"
+  doi:
+
+- id: akpoue2018annales_etji
+  year: 2018
+  type: article
+  authors:
+    en: "Akpoué, K. J., Bogny, Y. J. & Kpami Boni, C. M."
+    fr: "Akpoué, K. J., Bogny, Y. J. & Kpami Boni, C. M."
+  title:
+    en: "etʃi and the marking of tense inside the DP in Modjukru"
+    fr: "etʃi et marquage du temps dans le DP en modjukru"
+  journal: "Annales de la Faculté des Lettres et Sciences Humaines"
+  volume: "48/A"
+  pages: "41–56"
+  doi:
+
+- id: akpoue2018della_bere
+  year: 2018
+  type: article
+  authors:
+    en: "Akpoué, K. J. & Kouakou N'Guessan, G."
+    fr: "Akpoué, K. J. & Kouakou N'Guessan, G."
+  title:
+    en: "Language attitude and language vitality: The case of Bere, an endangered language of Côte d'Ivoire"
+    fr: "Attitude des locuteurs et vitalité des langues : cas du Bere, langue en danger de Côte d'Ivoire"
+  journal: "Revue Della/Afrique"
+  volume: "1"
+  issue: "2"
+  pages: "153–169"
+  doi:
+
+- id: akpoue2018cercls_tense
+  year: 2018
+  type: article
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "Eliciting tense morphemes in natural languages using the time focus test: The case of Baule and Wobe"
+    fr: "Elicitation des morphèmes de temps dans les langues naturelles via le test de focalisation du temps : Cas du baoulé et du wobé"
+  journal: "Revue du CERCLS"
+  series:
+    en: "Hors-série — Actes du 2e colloque international « Le verbe dans tous les sens »"
+    fr: "Hors-série — Actes du 2e colloque international « Le verbe dans tous les sens »"
+  volume: "2"
+  pages: "25–34"
+  doi:
+
+# ------------------------------------------------------------
+# CONFERENCE PROCEEDINGS (NON PEER-REVIEWED)
+# ------------------------------------------------------------
+
+- id: akpoue2018espana_tam
+  year: 2018
+  type: proceedings
+  authors:
+    en: "Akpoué, K. J. & Kouakou N'Guessan, G."
+    fr: "Akpoué, K. J. & Kouakou N'Guessan, G."
+  title:
+    en: "Lexical encoding of TAM in natural languages: The case of Bere and Baule"
+    fr: "Encodage lexical des TAM dans les langues naturelles : cas du Bere et du Baoulé"
+  booktitle:
+    en: "España en contacto con Africa, sus pueblos y sus Culturas"
+    fr: "España en contacto con Africa, sus pueblos y sus Culturas"
+  pages: "13–25"
+  doi:
+
+- id: akpoue2018voltacongo_coord
+  year: 2018
+  type: proceedings
+  authors:
+    en: "Akpoué, K. J. & Ahoundjo-Della, R. A."
+    fr: "Akpoué, K. J. & Ahoundjo-Della, R. A."
+  title:
+    en: "Coordination and subordination in some Kwa languages"
+    fr: "Coordination et Subordination dans quelques langues Kwa"
+  booktitle:
+    en: "Structure du Nom, du Syntagme Nominal et de la Phrase dans les langues Volta-Congo (Gur, Kru, Kwa) et Mande"
+    fr: "Structure du Nom, du Syntagme Nominal et de la Phrase dans les langues Volta-Congo (Gur, Kru, Kwa) et Mande"
+  pages: "215–224"
+  doi:
+
+# ------------------------------------------------------------
+# WEB PUBLICATIONS
+# ------------------------------------------------------------
+
+- id: akpoue2017terraling_baule_sswl
+  year: 2017
+  type: web
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "Language expert for Baule (Agba) — TerraLing group SSWL"
+    fr: "Expert linguistique pour le Baoulé (Agba) — Groupe TerraLing SSWL"
+  platform: "TerraLing"
+  url: "http://terraling.com/groups/7"
+
+- id: akpoue2017terraling_baule_cd
+  year: 2017
+  type: web
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "Language expert for Baule (Agba) — TerraLing group Conjunction & Disjunction"
+    fr: "Expert linguistique pour le Baoulé (Agba) — Groupe TerraLing Conjonction & Disjonction"
+  platform: "TerraLing"
+  url: "http://terraling.com/groups/8"
+
+- id: akpoue2017terraling_ivfr_sswl
+  year: 2017
+  type: web
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "Language expert for Ivorian French — TerraLing group SSWL"
+    fr: "Expert linguistique pour le Français ivoirien — Groupe TerraLing SSWL"
+  platform: "TerraLing"
+  url: "http://terraling.com/groups/7"
+
+- id: akpoue2017terraling_ivfr_cd
+  year: 2017
+  type: web
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "Language expert for Ivorian French — TerraLing group Conjunction & Disjunction"
+    fr: "Expert linguistique pour le Français ivoirien — Groupe TerraLing Conjonction & Disjonction"
+  platform: "TerraLing"
+  url: "http://terraling.com/groups/8"

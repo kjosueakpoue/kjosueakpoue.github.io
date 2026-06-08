@@ -1,0 +1,263 @@
+# ============================================================
+# fieldwork.yml
+# Akpoué Kouamé Josué — Terrain & Outils d'enquête
+# ============================================================
+# Sections : fieldwork_sessions | elicitation_tools
+# ============================================================
+
+fieldwork_sessions:
+
+  - id: fw_baule_2016
+    year: 2016
+    language: "Baule"
+    location:
+      en: "N'Zekrezessou (Iffou Region, Côte d'Ivoire)"
+      fr: "N'Zekrezessou (Région de l'Iffou, Côte d'Ivoire)"
+    role:
+      en: "Solo researcher"
+      fr: "Chercheur unique"
+    focus:
+      en: "Proper names"
+      fr: "Noms propres"
+
+  - id: fw_bere_2017
+    year: 2017
+    language: "Bere"
+    location:
+      en: "Bonosso, Côte d'Ivoire"
+      fr: "Bonosso, Côte d'Ivoire"
+    role:
+      en: "Team member"
+      fr: "Membre de l'équipe"
+    focus:
+      en: "General grammar"
+      fr: "Grammaire générale"
+
+  - id: fw_bere_2018_heath
+    year: 2018
+    language: "Bere"
+    location:
+      en: "Bonosso, Côte d'Ivoire"
+      fr: "Bonosso, Côte d'Ivoire"
+    role:
+      en: "Research assistant (Prof. Jeffrey Heath, University of Michigan)"
+      fr: "Assistant de recherche (Prof. Jeffrey Heath, Université du Michigan)"
+    focus:
+      en: "—"
+      fr: "—"
+
+  - id: fw_modjukru_2018
+    year: 2018
+    language: "Modjukru"
+    location:
+      en: "Kpas, Côte d'Ivoire"
+      fr: "Kpas, Côte d'Ivoire"
+    role:
+      en: "Co-researcher"
+      fr: "Co-chercheur"
+    focus:
+      en: "TAM & information structure"
+      fr: "TAM & structure informationnelle"
+
+  - id: fw_abure_2019
+    year: 2019
+    language: "Abure"
+    location:
+      en: "Ebra, Côte d'Ivoire"
+      fr: "Ebra, Côte d'Ivoire"
+    role:
+      en: "Team member"
+      fr: "Membre de l'équipe"
+    focus:
+      en: "—"
+      fr: "—"
+
+  - id: fw_wobe_2019_nomsem
+    year: 2019
+    language: "Wobé"
+    location:
+      en: "Abidjan, Côte d'Ivoire"
+      fr: "Abidjan, Côte d'Ivoire"
+    role:
+      en: "Supervisor (MA student fieldwork)"
+      fr: "Superviseur (terrain étudiant Master)"
+    focus:
+      en: "Nominal semantics"
+      fr: "Sémantique nominale"
+
+  - id: fw_wobe_2019_coord
+    year: 2019
+    language: "Wobé"
+    location:
+      en: "Daoukro, Côte d'Ivoire"
+      fr: "Daoukro, Côte d'Ivoire"
+    role:
+      en: "Solo researcher"
+      fr: "Chercheur unique"
+    focus:
+      en: "Coordination"
+      fr: "Coordination"
+
+  - id: fw_bere_2019_lexsem
+    year_start: 2019
+    year_end: 2021
+    language: "Bere"
+    location:
+      en: "Abidjan, Côte d'Ivoire"
+      fr: "Abidjan, Côte d'Ivoire"
+    role:
+      en: "Collaborator"
+      fr: "Collaborateur"
+    focus:
+      en: "Lexical semantics"
+      fr: "Sémantique lexicale"
+
+  - id: fw_baule_2019_tam
+    year_start: 2019
+    year_end: 2024
+    language: "Baule"
+    location:
+      en: "Abidjan, Côte d'Ivoire"
+      fr: "Abidjan, Côte d'Ivoire"
+    role:
+      en: "Solo researcher"
+      fr: "Chercheur unique"
+    focus:
+      en: "TAM"
+      fr: "TAM"
+
+# ============================================================
+# ELICITATION TOOLS
+# ============================================================
+
+elicitation_tools:
+
+  # --- Outils produits par l'auteur ---
+
+  - id: tool_aya
+    type: storyboard
+    produced_by: author
+    title: "Storyboard \"Aya\""
+    version: "v1.0.0"
+    year: 2019
+    year_published: 2021
+    targets:
+      en: "TAM: past tense, progressive and perfective aspect, habitual contexts"
+      fr: "TAM : temps passé, aspect progressif et perfectif, contextes habituels"
+    license: "CC-BY"
+    platform: "Zenodo"
+    url: "https://doi.org/10.5281/zenodo.57698141"
+
+  - id: tool_party
+    type: storyboard
+    produced_by: author
+    title: "Storyboard \"Party\""
+    version: "v1.0.0"
+    year: 2020
+    targets:
+      en: "Coordination — emphatic coordination, focus contexts"
+      fr: "Coordination — coordination emphatique, contextes de focus"
+    license: "CC-BY"
+    platform: "Zenodo"
+    url: "https://doi.org/10.5281/zenodo.11378361"
+
+  - id: tool_coffee
+    type: storyboard
+    produced_by: author
+    title: "Storyboard \"Coffee\""
+    version: "v1.0.0"
+    year: 2020
+    targets:
+      en: "Coordination — emphatic coordination"
+      fr: "Coordination — coordination emphatique"
+    license: "CC-BY"
+    platform: "Zenodo"
+    url: "https://doi.org/10.5281/zenodo.11378238"
+
+  - id: tool_courses
+    type: storyboard
+    produced_by: author
+    title: "Storyboard \"Courses\""
+    version: "v1.0.0"
+    year: 2020
+    targets:
+      en: "Coordination — emphatic coordination"
+      fr: "Coordination — coordination emphatique"
+    license: "CC-BY"
+    platform: "Zenodo"
+    url: "https://doi.org/10.5281/zenodo.11377977"
+
+  - id: tool_beans_sticks
+    type: picture_set
+    produced_by: author
+    title: "Beans & sticks pictures"
+    year: 2024
+    targets:
+      en: "—"
+      fr: "—"
+    license: "TBC"
+    platform: "GitHub"
+    url: "https://github.com/dbjoshua/visualmaterials"
+
+  - id: tool_dots
+    type: picture_set
+    produced_by: author
+    title: "Dots pictures"
+    year: 2020
+    targets:
+      en: "—"
+      fr: "—"
+    license: "TBC"
+    platform: "GitHub"
+    url: "https://github.com/dbjoshua/visualmaterials"
+
+  - id: tool_circ_squares
+    type: picture_set
+    produced_by: author
+    title: "Circ & Squares pictures"
+    year: 2020
+    targets:
+      en: "—"
+      fr: "—"
+    license: "TBC"
+    platform: "GitHub"
+    url: "https://github.com/dbjoshua/visualmaterials"
+
+  # --- Outils externes utilisés ---
+
+  - id: tool_jenks
+    type: questionnaire
+    produced_by: external
+    title: "Peter Jenks questionnaire"
+    targets:
+      en: "Nominal semantics"
+      fr: "Sémantique nominale"
+    used_for:
+      en: "Wobé fieldwork (2019)"
+      fr: "Terrain wobé (2019)"
+    url:
+
+  - id: tool_hampton
+    type: storyboard
+    produced_by: external
+    title: "TotemField / Hampton Storyboards"
+    targets:
+      en: "General elicitation"
+      fr: "Élicitation générale"
+    used_for:
+      en: "Wobé fieldwork (2019)"
+      fr: "Terrain wobé (2019)"
+    url: "https://totemfieldstoryboards.org"
+
+  - id: tool_melatamp
+    type: storyboard
+    produced_by: external
+    title: "MelaTAMP Storyboards"
+    authors_external: "von Prince, K. et al."
+    targets:
+      en: "TAM elicitation"
+      fr: "Élicitation des TAM"
+    used_for:
+      en: "TAM fieldwork"
+      fr: "Terrain TAM"
+    url: "https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22von%20Prince%2C%20Kilu%22"

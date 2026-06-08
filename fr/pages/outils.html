@@ -1,0 +1,202 @@
+---
+layout: page
+lang: fr
+alt_url: "pages/tools.html"
+title: "Outils"
+subtitle: "Outils computationnels pour la rédaction scientifique, la documentation linguistique et l'analyse formelle."
+label: "Akpoué Kouamé Josué"
+description: "Outils développés par Akpoué Kouamé Josué — WRIML, packages LaTeX, macros pour la rédaction scientifique."
+css:
+  - tools.css
+---
+
+<!-- ============================================================
+     OUTILS — fr/pages/outils.html
+     ============================================================ -->
+
+
+<!-- 1. WRIML -->
+{% assign wriml = site.data.tools | where: "type", "language" | first %}
+
+<section class="section" id="wriml">
+  <div class="section-header">
+    <h2 class="section-title">{{ wriml.name }}</h2>
+    <p class="section-subtitle">{{ wriml.fullname.fr }}</p>
+  </div>
+
+  <div class="tool-feature">
+    <div class="tool-feature__body">
+      <div class="tool-feature__meta">
+        <span class="badge badge--release">{{ wriml.status }}</span>
+        <span class="badge badge--release">v{{ wriml.version_current }}</span>
+        <span class="label">Langage de balisage documentaire</span>
+      </div>
+
+      <div class="prose">
+        <p>{{ wriml.description.fr }}</p>
+      </div>
+
+      <div class="tool-feature__links">
+        {% if wriml.url_site %}
+          <a href="{{ wriml.url_site }}" class="btn btn--primary"
+             target="_blank" rel="noopener">
+            Documentation →
+          </a>
+        {% endif %}
+        {% if wriml.url_github %}
+          <a href="{{ wriml.url_github }}" class="btn btn--ghost"
+             target="_blank" rel="noopener">
+            GitHub →
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Releases WRIML -->
+  {% assign wriml_releases = site.data.releases | where: "tool_id", "wriml" %}
+  {% if wriml_releases.size > 0 %}
+    <div class="releases-mini">
+      <h3 class="releases-mini__title">Dernières releases</h3>
+      <div class="releases-mini__list">
+        {% for rel in wriml_releases %}
+          <div class="release-entry">
+            <span class="badge badge--release">v{{ rel.version }}</span>
+            <span class="release-entry__title">{{ rel.title.fr }}</span>
+            <span class="meta">{{ rel.month }} {{ rel.year }}</span>
+            {% if rel.url %}
+              <a href="{{ rel.url }}" class="pub-link"
+                 target="_blank" rel="noopener">Voir →</a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+</section>
+
+
+<!-- 2. PACKAGES LATEX -->
+<section class="section section--alt" id="latex">
+  <div class="section-header">
+    <h2 class="section-title">Packages LaTeX</h2>
+    <p class="section-subtitle">
+      Packages pour la composition linguistique — glose interlinéaire,
+      notation de syntaxe et sémantique formelles.
+    </p>
+  </div>
+
+  <div class="tools-list">
+    {% assign packages = site.data.tools | where: "type", "package" %}
+    {% for tool in packages %}
+      <article class="tool-entry" id="{{ tool.id }}">
+
+        <div class="tool-entry__header">
+          <div class="tool-entry__name-wrap">
+            <code class="tool-entry__name">{{ tool.name }}</code>
+            <span class="badge badge--release">{{ tool.status }}</span>
+          </div>
+          <span class="meta">{{ tool.platform }}</span>
+        </div>
+
+        <p class="tool-entry__desc">{{ tool.description.fr }}</p>
+
+        <div class="tool-entry__links">
+          {% if tool.url_ctan %}
+            <a href="{{ tool.url_ctan }}" class="pub-link"
+               target="_blank" rel="noopener">CTAN →</a>
+          {% endif %}
+          {% if tool.url_github %}
+            <a href="{{ tool.url_github }}" class="pub-link"
+               target="_blank" rel="noopener">GitHub →</a>
+          {% endif %}
+        </div>
+
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+
+<!-- 3. MACROS -->
+<section class="section" id="macros">
+  <div class="section-header">
+    <h2 class="section-title">Macros</h2>
+    <p class="section-subtitle">
+      Macros VBA et LibreOffice pour la rédaction scientifique.
+    </p>
+  </div>
+
+  <div class="tools-list">
+    {% assign macros = site.data.tools | where: "type", "macro" %}
+    {% for tool in macros %}
+      <article class="tool-entry" id="{{ tool.id }}">
+
+        <div class="tool-entry__header">
+          <div class="tool-entry__name-wrap">
+            <span class="tool-entry__name--text">{{ tool.name.fr }}</span>
+            <span class="badge badge--release">{{ tool.status }}</span>
+          </div>
+          <span class="meta">{{ tool.platform }}</span>
+        </div>
+
+        <p class="tool-entry__desc">{{ tool.description.fr }}</p>
+
+        <div class="tool-entry__links">
+          {% if tool.url_github %}
+            <a href="{{ tool.url_github }}" class="pub-link"
+               target="_blank" rel="noopener">GitHub →</a>
+          {% endif %}
+        </div>
+
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+
+<!-- 4. TOUTES LES RELEASES -->
+<section class="section section--alt" id="releases">
+  <div class="section-header">
+    <h2 class="section-title">Toutes les releases</h2>
+  </div>
+
+  <div class="pub-list">
+    {% assign releases = site.data.releases | sort: "year" | reverse %}
+    {% for rel in releases %}
+      <article class="pub-entry">
+
+        <div class="pub-entry__year">
+          <span class="meta">{{ rel.year }}</span>
+        </div>
+
+        <div class="pub-entry__body">
+          <p class="pub-entry__title">{{ rel.title.fr }}</p>
+          <p class="pub-entry__ref meta">
+            {{ rel.tool_id | upcase }} · v{{ rel.version }}
+            {% if rel.month %} · {{ rel.month }}{% endif %}
+          </p>
+          {% if rel.notes.fr != "" %}
+            <p class="pub-entry__ref meta">{{ rel.notes.fr }}</p>
+          {% endif %}
+          <div class="pub-entry__links">
+            {% if rel.url %}
+              <a href="{{ rel.url }}" class="pub-link"
+                 target="_blank" rel="noopener">Voir →</a>
+            {% endif %}
+            {% if rel.url_github %}
+              <a href="{{ rel.url_github }}" class="pub-link"
+                 target="_blank" rel="noopener">GitHub →</a>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="pub-entry__badge">
+          <span class="badge badge--release">v{{ rel.version }}</span>
+        </div>
+
+      </article>
+    {% endfor %}
+  </div>
+</section>

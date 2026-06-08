@@ -1,0 +1,198 @@
+/* ============================================================
+   TOOLS.CSS — Page Outils / Tools
+   Akpoué Kouamé Josué — Site académique
+   ============================================================
+   Gère :
+   - Outil mis en avant (.tool-feature)
+   - Liste d'outils (.tools-list, .tool-entry)
+   - Releases mini (.releases-mini, .release-entry)
+   Réutilise depuis publications.css :
+   - .pub-list, .pub-entry, .pub-link (releases complètes)
+   ============================================================ */
+
+
+/* ============================================================
+   OUTIL MIS EN AVANT — WRIML
+   ============================================================
+   Présentation large avec description, boutons, releases.
+   ============================================================ */
+
+.tool-feature {
+  margin-top: var(--space-lg);
+  padding: var(--space-xl);
+  border: var(--border-mid) var(--accent);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-canard-pale);
+}
+
+.tool-feature__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.tool-feature__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.tool-feature__links {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+
+/* ============================================================
+   RELEASES MINI — dans la section WRIML
+   ============================================================ */
+
+.releases-mini {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: var(--border-thin) var(--border);
+}
+
+.releases-mini__title {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.releases-mini__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.release-entry {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.release-entry__title {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-light);
+  color: var(--text);
+  flex: 1;
+}
+
+
+/* ============================================================
+   LISTE D'OUTILS — packages + macros
+   ============================================================ */
+
+.tools-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.tool-entry {
+  padding: var(--space-lg);
+  border: var(--border-thin) var(--border);
+  border-radius: var(--radius-md);
+  background-color: var(--bg);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.tool-entry:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.tool-entry__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.tool-entry__name-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Nom package en code */
+.tool-entry__name {
+  font-family: var(--font-code);
+  font-size: var(--text-md);
+  font-weight: var(--weight-medium);
+  color: var(--accent);
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Nom macro en texte normal */
+.tool-entry__name--text {
+  font-family: var(--font-interface);
+  font-size: var(--text-md);
+  font-weight: var(--weight-medium);
+  color: var(--text);
+}
+
+.tool-entry__desc {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-light);
+  color: var(--text-muted);
+  line-height: var(--leading-loose);
+  margin-bottom: var(--space-md);
+}
+
+.tool-entry__links {
+  display: flex;
+  gap: var(--space-md);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .tool-feature {
+    padding: var(--space-lg);
+  }
+
+  .tool-feature__links {
+    flex-direction: column;
+  }
+
+  .tool-entry__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .release-entry {
+    gap: var(--space-2);
+  }
+}
+
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+
+@media print {
+  .tool-feature {
+    border: 1px solid #ccc;
+    background: none;
+  }
+
+  .tool-feature__links,
+  .tool-entry__links,
+  .releases-mini {
+    display: none;
+  }
+}

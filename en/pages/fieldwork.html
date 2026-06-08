@@ -1,0 +1,184 @@
+---
+layout: page
+lang: en
+alt_url: "pages/terrain.html"
+title: "Fieldwork"
+subtitle: "Field experience, elicitation tools, and research data."
+label: "Akpoué Kouamé Josué"
+description: "Fieldwork experience and elicitation tools of Akpoué Kouamé Josué — Ivorian languages, Kwa languages, TAM, coordination, nominal semantics."
+css:
+  - fieldwork.css
+---
+
+<!-- ============================================================
+     FIELDWORK — en/pages/fieldwork.html
+     ============================================================
+     SECTIONS :
+     1. Field experience      (_data/fieldwork.yml → fieldwork_sessions)
+     2. Elicitation tools
+        2a. Author-produced   (_data/fieldwork.yml → elicitation_tools,
+                               produced_by: author)
+        2b. External tools    (_data/fieldwork.yml → elicitation_tools,
+                               produced_by: external)
+     3. Research data         (placeholder — à venir)
+     ============================================================
+     AJOUTER UN TERRAIN  → _data/fieldwork.yml, fieldwork_sessions
+     AJOUTER UN OUTIL    → _data/fieldwork.yml, elicitation_tools
+     ============================================================ -->
+
+
+<!-- ============================================================
+     1. FIELD EXPERIENCE
+     ============================================================ -->
+<section class="section" id="experience">
+  <div class="section-header">
+    <h2 class="section-title">Field experience</h2>
+    <p class="section-subtitle">
+      My theoretical work is grounded in first-hand fieldwork. Since 2016,
+      I have conducted or participated in fieldwork sessions on six Ivorian
+      languages, primarily in Côte d'Ivoire.
+    </p>
+  </div>
+
+  <div class="fieldwork-table-wrap">
+    <table class="fieldwork-table">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Location</th>
+          <th>Language</th>
+          <th>Role</th>
+          <th>Focus</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for session in site.data.fieldwork.fieldwork_sessions %}
+          <tr>
+            <td class="meta fw-year">
+              {% if session.year_start %}
+                {{ session.year_start }}–{{ session.year_end }}
+              {% else %}
+                {{ session.year }}
+              {% endif %}
+            </td>
+            <td>{{ session.location.en }}</td>
+            <td><strong>{{ session.language }}</strong></td>
+            <td class="meta">{{ session.role.en }}</td>
+            <td class="meta">{{ session.focus.en }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     2. ELICITATION TOOLS
+     ============================================================ -->
+<section class="section section--alt" id="tools">
+  <div class="section-header">
+    <h2 class="section-title">Elicitation tools</h2>
+    <p class="section-subtitle">
+      Elicitation materials developed for formal semantic fieldwork on
+      Ivorian languages. All author-produced materials are freely available
+      for reuse by other researchers.
+    </p>
+  </div>
+
+  <!-- 2a. Author-produced -->
+  <h3 class="tools-subhead">Author-produced materials</h3>
+
+  <div class="elicitation-list">
+    {% assign author_tools = site.data.fieldwork.elicitation_tools
+       | where: "produced_by", "author" %}
+    {% for tool in author_tools %}
+      <article class="elicitation-entry">
+
+        <div class="elicitation-entry__header">
+          <div class="elicitation-entry__title-wrap">
+            <h4 class="elicitation-entry__title">{{ tool.title }}</h4>
+            {% if tool.version %}
+              <span class="badge badge--release">{{ tool.version }}</span>
+            {% endif %}
+            <span class="badge badge--release">{{ tool.type }}</span>
+          </div>
+          <div class="elicitation-entry__meta">
+            <span class="meta">{{ tool.year }}</span>
+            {% if tool.license %}
+              <span class="badge badge--chapter">{{ tool.license }}</span>
+            {% endif %}
+          </div>
+        </div>
+
+        <p class="elicitation-entry__targets">
+          <strong>Targets:</strong> {{ tool.targets.en }}
+        </p>
+
+        <div class="elicitation-entry__links">
+          {% if tool.url %}
+            <a href="{{ tool.url }}" class="pub-link"
+               target="_blank" rel="noopener">
+              {{ tool.platform }} →
+            </a>
+          {% endif %}
+        </div>
+
+      </article>
+    {% endfor %}
+  </div>
+
+  <!-- 2b. External tools -->
+  <h3 class="tools-subhead tools-subhead--mt">External tools used</h3>
+
+  <div class="elicitation-list">
+    {% assign external_tools = site.data.fieldwork.elicitation_tools
+       | where: "produced_by", "external" %}
+    {% for tool in external_tools %}
+      <article class="elicitation-entry elicitation-entry--external">
+
+        <div class="elicitation-entry__header">
+          <div class="elicitation-entry__title-wrap">
+            <h4 class="elicitation-entry__title">{{ tool.title }}</h4>
+            <span class="badge badge--chapter">{{ tool.type }}</span>
+          </div>
+          {% if tool.authors_external %}
+            <span class="meta">{{ tool.authors_external }}</span>
+          {% endif %}
+        </div>
+
+        <p class="elicitation-entry__targets">
+          <strong>Targets:</strong> {{ tool.targets.en }}
+        </p>
+
+        <p class="elicitation-entry__targets meta">
+          Used for: {{ tool.used_for.en }}
+        </p>
+
+        {% if tool.url %}
+          <div class="elicitation-entry__links">
+            <a href="{{ tool.url }}" class="pub-link"
+               target="_blank" rel="noopener">View →</a>
+          </div>
+        {% endif %}
+
+      </article>
+    {% endfor %}
+  </div>
+
+</section>
+
+
+<!-- ============================================================
+     3. RESEARCH DATA
+     ============================================================ -->
+<section class="section" id="data">
+  <div class="section-header">
+    <h2 class="section-title">Research data</h2>
+  </div>
+  <p class="prose">
+    Corpus data, annotated fieldwork recordings, and elicitation results
+    will be made available here as they are prepared for distribution.
+    <span class="meta"> — Coming soon.</span>
+  </p>
+</section>

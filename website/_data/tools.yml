@@ -1,0 +1,82 @@
+# ============================================================
+# tools.yml
+# Akpoué Kouamé Josué — Outils & Projets de développement
+# ============================================================
+# Types : language | package | macro
+# Status : active | beta | stable | on-hold
+# ============================================================
+
+# ------------------------------------------------------------
+# LANGAGES DOCUMENTAIRES
+# ------------------------------------------------------------
+
+- id: wriml
+  type: language
+  status: active
+  name: "WRIML"
+  fullname:
+    en: "WRIML — Writing & Research Information Markup Language"
+    fr: "WRIML — Writing & Research Information Markup Language"
+  description:
+    en: "A documentary markup language designed for scientific writing and research documentation. WRIML provides a structured, extensible framework for encoding linguistic and scholarly documents."
+    fr: "Un langage de balisage documentaire conçu pour la rédaction scientifique et la documentation de recherche. WRIML fournit un cadre structuré et extensible pour l'encodage de documents linguistiques et savants."
+  url_site: "https://dbjoshua.github.io/WRIML"
+  url_github: "https://github.com/wriml"
+  version_current: "3.0"
+
+# ------------------------------------------------------------
+# PACKAGES LATEX
+# ------------------------------------------------------------
+
+- id: xsipa
+  type: package
+  status: stable
+  name: "xsipa"
+  platform: "LaTeX"
+  description:
+    en: "A LaTeX package for linguistic interlinear glossing."
+    fr: "Un package LaTeX pour la glose interlinéaire en linguistique."
+  url_github: "https://github.com/dbjoshua/linguists-tex"
+  url_ctan:
+  version_current:
+
+- id: interlinear
+  type: package
+  status: stable
+  name: "interlinear"
+  platform: "LaTeX"
+  description:
+    en: "LaTeX interlinear glossing package."
+    fr: "Package LaTeX pour la glose interlinéaire."
+  url_github: "https://github.com/dbjoshua/linguists-tex"
+  url_ctan:
+  version_current:
+
+- id: math4linsy
+  type: package
+  status: beta
+  name: "math4linsy"
+  platform: "LaTeX"
+  description:
+    en: "A LaTeX package providing mathematical tools for formal linguistics and syntax."
+    fr: "Un package LaTeX fournissant des outils mathématiques pour la linguistique formelle et la syntaxe."
+  url_github: "https://github.com/dbjoshua/linguists-tex"
+  url_ctan:
+  version_current:
+
+# ------------------------------------------------------------
+# MACROS
+# ------------------------------------------------------------
+
+- id: macros_vba
+  type: macro
+  status: active
+  name:
+    en: "VBA macros for scientific writing"
+    fr: "Macros VBA pour la rédaction scientifique"
+  platform: "Microsoft Office / LibreOffice"
+  description:
+    en: "A collection of VBA and LibreOffice macros designed to streamline scientific writing workflows."
+    fr: "Une collection de macros VBA et LibreOffice conçues pour optimiser les flux de travail de rédaction scientifique."
+  url_github: "https://github.com/dbjoshua"
+  version_current:

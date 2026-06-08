@@ -1,0 +1,150 @@
+<!-- ============================================================
+     NAV.HTML — Navigation principale sticky
+     ============================================================
+     Inclus dans _layouts/default.html.
+     Le JS (dark mode, burger, scroll shadow, lien actif)
+     est dans default.html.
+
+     STRUCTURE :
+     [Logo/monogramme] [Liens nav] [Sélecteur EN|FR + Dark toggle + Burger]
+
+     LABELS BILINGUES :
+     Contrôlés par page.lang (défini dans le front matter de chaque page).
+     Pour modifier un label : chercher la section "Labels" ci-dessous.
+
+     AJOUTER UN LIEN :
+     Copier un <a class="nav-link"> et adapter href + labels.
+     ============================================================ -->
+
+<header class="site-nav" id="site-nav" role="banner">
+  <div class="container nav-inner">
+
+    <!-- ── Logo / Monogramme ── -->
+    <a href="{{ site.baseurl }}/{% if page.lang == 'fr' %}fr/{% else %}en/{% endif %}"
+       class="nav-logo"
+       aria-label="{% if page.lang == 'fr' %}Accueil — Akpoué Kouamé Josué{% else %}Home — Akpoué Kouamé Josué{% endif %}">
+
+      <!-- Logo SVG inline : étoile 4 branches, version compacte -->
+      <svg class="nav-logo__icon" viewBox="0 0 40 40"
+           aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(-2920.3177,467.61917) scale(0.1)">
+          <g transform="matrix(0.57142857,0,0,0.57142857,2610.7325,-1433.3986)">
+            <path d="m 756.378,1717.306 c 41.657,-17.512 87.405,-27.192 135.396,-27.192
+                     0,193.17 -156.83,350 -350,350 0,-47.991 9.68,-93.739 27.192,-135.396
+                     97.656,-12.272 175.141,-89.756 187.412,-187.412 z"
+                  fill="currentColor"/>
+            <path d="m 1214.582,1904.718 c 17.512,41.657 27.192,87.405 27.192,135.396
+                     -193.17,0 -350,-156.83 -350,-350 47.991,0 93.739,9.68 135.396,27.192
+                     12.272,97.656 89.756,175.14 187.412,187.412 z"
+                  fill="currentColor"/>
+            <path d="m 1027.17,2362.922 c -41.657,17.512 -87.405,27.192 -135.396,27.192
+                     0,-193.17 156.83,-350 350,-350 0,47.991 -9.68,93.739 -27.192,135.396
+                     -97.656,12.271 -175.14,89.756 -187.412,187.412 z"
+                  fill="currentColor"/>
+            <path d="m 568.966,2175.51 c -17.512,-41.657 -27.192,-87.405 -27.192,-135.396
+                     193.17,0 350,156.83 350,350 -47.991,0 -93.739,-9.68 -135.396,-27.192
+                     -12.271,-97.656 -89.756,-175.141 -187.412,-187.412 z"
+                  fill="currentColor"/>
+          </g>
+        </g>
+      </svg>
+
+      <!-- Nom abrégé — masqué sur très petits écrans -->
+      <span class="nav-logo__name">Akpoué K. Josué</span>
+    </a>
+
+    <!-- ── Liens de navigation ──
+         LABELS : modifier les textes EN | FR ici
+         HREFS  : chemins relatifs depuis la racine du site
+    ── -->
+    <nav class="nav-links" id="nav-links" aria-label="{% if page.lang == 'fr' %}Navigation principale{% else %}Main navigation{% endif %}">
+
+      {% if page.lang == 'fr' %}
+        <a href="{{ site.baseurl }}/fr/" class="nav-link">Accueil</a>
+        <a href="{{ site.baseurl }}/fr/pages/recherche.html" class="nav-link">Recherche</a>
+        <a href="{{ site.baseurl }}/fr/pages/publications.html" class="nav-link">Publications</a>
+        <a href="{{ site.baseurl }}/fr/pages/outils.html" class="nav-link">Outils</a>
+        <a href="{{ site.baseurl }}/fr/pages/terrain.html" class="nav-link">Terrain</a>
+        <a href="{{ site.baseurl }}/fr/pages/collaborer.html" class="nav-link nav-link--cta">Collaborer</a>
+      {% else %}
+        <a href="{{ site.baseurl }}/en/" class="nav-link">Home</a>
+        <a href="{{ site.baseurl }}/en/pages/research.html" class="nav-link">Research</a>
+        <a href="{{ site.baseurl }}/en/pages/publications.html" class="nav-link">Publications</a>
+        <a href="{{ site.baseurl }}/en/pages/tools.html" class="nav-link">Tools</a>
+        <a href="{{ site.baseurl }}/en/pages/fieldwork.html" class="nav-link">Fieldwork</a>
+        <a href="{{ site.baseurl }}/en/pages/collaborate.html" class="nav-link nav-link--cta">Collaborate</a>
+      {% endif %}
+
+    </nav>
+
+    <!-- ── Actions droite : EN|FR + Dark mode + Burger ── -->
+    <div class="nav-actions">
+
+      <!-- Sélecteur de langue EN | FR
+           alt_url : défini dans le front matter de chaque page
+           pour pointer vers la page équivalente dans l'autre langue.
+           Exemple front matter :
+             lang: en
+             alt_url: pages/recherche.html   (page FR équivalente)
+      -->
+      <div class="lang-switch" aria-label="Language / Langue">
+        {% if page.lang == 'fr' %}
+          <a href="{{ site.baseurl }}/en/{% if page.alt_url %}{{ page.alt_url }}{% endif %}"
+             class="lang-btn"
+             hreflang="en"
+             aria-label="Switch to English">EN</a>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <span class="lang-btn lang-btn--active" aria-current="true">FR</span>
+        {% else %}
+          <span class="lang-btn lang-btn--active" aria-current="true">EN</span>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <a href="{{ site.baseurl }}/fr/{% if page.alt_url %}{{ page.alt_url }}{% endif %}"
+             class="lang-btn"
+             hreflang="fr"
+             aria-label="Passer en français">FR</a>
+        {% endif %}
+      </div>
+
+      <!-- Toggle dark mode
+           Les icônes soleil/lune sont affichées/masquées via CSS
+           selon [data-theme] sur <html> (voir variables.css).
+      -->
+      <button class="theme-toggle" id="theme-toggle"
+              aria-label="{% if page.lang == 'fr' %}Basculer mode sombre/clair{% else %}Toggle dark/light mode{% endif %}"
+              title="{% if page.lang == 'fr' %}Mode sombre{% else %}Dark mode{% endif %}">
+        <!-- Soleil — visible en mode clair -->
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1"  x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22"  y1="4.22"  x2="5.64"  y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1"  y1="12" x2="3"  y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22"  y1="19.78" x2="5.64"  y2="18.36"/>
+          <line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"/>
+        </svg>
+        <!-- Lune — visible en mode sombre -->
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+
+      <!-- Burger menu — mobile uniquement (affiché via CSS) -->
+      <button class="nav-burger" id="nav-burger"
+              aria-label="{% if page.lang == 'fr' %}Ouvrir le menu{% else %}Open menu{% endif %}"
+              aria-expanded="false"
+              aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+    <!-- /nav-actions -->
+
+  </div>
+  <!-- /nav-inner -->
+</header>

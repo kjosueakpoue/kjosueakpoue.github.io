@@ -1,0 +1,212 @@
+# ============================================================
+# talks.yml
+# Akpoué Kouamé Josué — Talks & Conference Presentations
+# ============================================================
+# Types : talk | keynote
+# Scope : international | local
+# Pour ajouter une entrée : copier un bloc, modifier les champs
+# ============================================================
+
+- id: akpoue2026wetalk_latex
+  year: 2026
+  month: "May"
+  type: keynote
+  scope: local
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "Scientific writing with LaTeX: An opportunity for authors and journals (Parts 1 & 2)"
+    fr: "La rédaction scientifique avec LaTeX : opportunité pour les auteurs et les revues scientifiques (Parties 1 & 2)"
+  event:
+    en: "WeTalk Weekly Conferences"
+    fr: "Conférences hebdomadaires du WeTalk"
+  location: "American Space — UFHB, Abidjan"
+  resources: "https://github.com/dbjoshua/linguists-tex"
+
+- id: akpoue2026wetalk_tense
+  year: 2026
+  month: "February"
+  type: keynote
+  scope: local
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "Grammatical tense in Kwa languages: Concordism bias or empirical reality?"
+    fr: "Les temps grammaticaux dans les langues Kwa : biais de concordisme ou réalité empirique ?"
+  event:
+    en: "WeTalk Weekly Conferences"
+    fr: "Conférences hebdomadaires du WeTalk"
+  location: "American Space — UFHB, Abidjan"
+  resources:
+
+- id: akpoue2023amherst_articles
+  year: 2023
+  month: "July"
+  type: talk
+  scope: international
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "Strong articles as topic markers"
+    fr: "Les articles forts comme marqueurs de topique"
+  event:
+    en: "ALS-LSA Workshop, LSA Summer Institute"
+    fr: "ALS-LSA Workshop, LSA Summer Institute"
+  location: "University of Massachusetts Amherst"
+  resources:
+
+- id: akpoue2023cnrs_reported
+  year: 2023
+  month: "July"
+  type: talk
+  scope: international
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "Remarks on the syntax of reported speech in Baule"
+    fr: "Remarques sur la syntaxe du discours rapporté en baoulé"
+  event:
+    en: "Reported Discourse Within Grammar"
+    fr: "Reported Discourse Within Grammar"
+  location: "CNRS, Villejuif"
+  resources:
+
+- id: akpoue2023bonoua_adverbs
+  year: 2023
+  month: "October"
+  type: talk
+  scope: local
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "When adverbs and adverbial clauses reveal the tenses of Baule"
+    fr: "Quand les adverbes et les clauses adverbiales révèlent les temps du baoulé"
+  event:
+    en: "Colloque international de Bonoua"
+    fr: "Colloque international de Bonoua"
+  location: "Université Félix Houphouët-Boigny, Abidjan"
+  resources:
+
+- id: akpoue2019walc_comitative
+  year: 2019
+  month:
+  type: talk
+  scope: local
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "Comitative coordinators: Some empirical evidences"
+    fr: "Coordinateurs comitatifs : quelques données empiriques"
+  event:
+    en: "31st West African Language Congress"
+    fr: "31e Congrès des Langues d'Afrique de l'Ouest"
+  location: "Université Félix Houphouët-Boigny, Abidjan"
+  resources:
+
+- id: akpoue2019coloquio_names
+  year: 2019
+  month:
+  type: talk
+  scope: local
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "Remarks on the semantics of proper names"
+    fr: "Remarques sur la sémantique des noms propres"
+  event:
+    en: "II Coloquio"
+    fr: "II Coloquio"
+  location: "Université Félix Houphouët-Boigny, Abidjan"
+  resources:
+
+- id: akpoue2018abilang_aspect
+  year: 2018
+  month:
+  type: talk
+  scope: local
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "The aspectual prominence of African languages hypothesis revisited"
+    fr: "De la proéminence aspectuelle des langues africaines"
+  event:
+    en: "3rd ABILANG International Colloquium"
+    fr: "3e Colloque international ABILANG"
+  location: "Université Alassane Ouattara, Bouaké"
+  resources:
+
+- id: akpoue2018bonoua_tense
+  year: 2018
+  month:
+  type: talk
+  scope: local
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "Past and non-finite tenses in Kwa and Kru languages"
+    fr: "Temps passés et temps non-finis dans les langues Kwa et Kru"
+  event:
+    en: "Colloque de Bonoua 2"
+    fr: "Colloque de Bonoua 2"
+  location: "Bonoua, Côte d'Ivoire"
+  resources:
+
+- id: akpoue2018bonoua_nouchi
+  year: 2018
+  month:
+  type: talk
+  scope: local
+  authors:
+    en: "Akpoué, K. J. & Agnissoni, S."
+    fr: "Akpoué, K. J. & Agnissoni, S."
+  title:
+    en: "Tense, aspect and modality in Nouchi"
+    fr: "Temps, aspects et modalité en nouchi"
+  event:
+    en: "Colloque de Bonoua 2"
+    fr: "Colloque de Bonoua 2"
+  location: "Bonoua, Côte d'Ivoire"
+  resources:
+
+- id: akpoue2017walc_coord
+  year: 2017
+  month:
+  type: talk
+  scope: international
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "Coordination in Kwa and Mande languages"
+    fr: "Coordination dans les langues Kwa et Mandé"
+  event:
+    en: "30th West African Languages Congress / 10th LAG"
+    fr: "30e Congrès des Langues d'Afrique de l'Ouest / 10e LAG"
+  location: "University of Education Winneba, Ghana"
+  resources:
+
+- id: akpoue2017geneva_coord
+  year: 2017
+  month:
+  type: talk
+  scope: international
+  authors:
+    en: "Akpoué, K. J."
+    fr: "Akpoué, K. J."
+  title:
+    en: "Coordinated sequences in some Mande languages"
+    fr: "Les séquences coordonnées dans quelques langues mandé"
+  event:
+    en: "Colloquium CLG2016 — Workshop Henri Frei"
+    fr: "Colloque CLG2016 — Workshop Henri Frei"
+  location: "Université de Genève"
+  resources:

@@ -1,0 +1,524 @@
+/* ============================================================
+   VARIABLES.CSS — Charte graphique & design tokens
+   Akpoué Kouamé Josué — Site académique
+   ============================================================
+   CE FICHIER EST LA SOURCE DE VÉRITÉ DE TOUTE LA CHARTE.
+   Toute modification visuelle globale se fait ici.
+   Les autres fichiers CSS ne font que consommer ces variables.
+
+   SOMMAIRE
+   1. Couleurs
+   2. Typographie
+   3. Hiérarchie typographique
+   4. Espacements
+   5. Layout
+   6. Bordures & rayons
+   7. Ombres
+   8. Transitions
+   9. Mode clair (défaut)
+   10. Mode sombre
+   11. Reset minimal
+   12. Utilitaires globaux
+   13. Badges
+   14. Print
+   ============================================================ */
+
+
+/* ============================================================
+   1. COULEURS
+   ============================================================
+   Palette définie dans la charte graphique (voir image de
+   référence). Ne pas ajouter de couleurs hors de cette liste
+   sans mise à jour de la charte.
+   ============================================================ */
+
+:root {
+
+  /* Couleur identitaire — utilisée avec parcimonie :
+     accents, cards hero, badges article, éléments d'attention.
+     NE PAS utiliser comme couleur de fond sur de grandes surfaces. */
+  --color-canard:        #0C857A;
+
+  /* Variation plus claire pour hover et états actifs */
+  --color-canard-light:  #0ea898;
+
+  /* Fond de cards et badges en mode clair — très pâle */
+  --color-canard-pale:   #e6f4f3;
+
+  /* Textes discrets sur fond canard (ex: labels sur bouton primaire) */
+  --color-turquoise:     #64CCCC;
+
+  /* Fond principal mode clair — blanc légèrement chaud,
+     plus doux que #ffffff pour la lecture longue */
+  --color-ivoire:        #FFFFF7;
+
+  /* Métadonnées, dates, éléments discrets */
+  --color-gris:          #717A7A;
+
+  /* Texte principal mode clair / fond principal mode sombre.
+     "Faux noir" — plus doux que #000000, cohérent avec --color-canard */
+  --color-noir:          #021A18;
+
+
+  /* ============================================================
+     2. TYPOGRAPHIE
+     ============================================================
+     Fira Sans : interface, navigation, corps de texte, titres.
+     Fira Code : code, packages, éléments techniques.
+     EB Garamond : RÉSERVÉ AU PRINT (CV, PDF). Ne pas utiliser
+     sur le site web.
+     ============================================================ */
+
+  /* Police principale — tous les textes du site */
+  --font-interface:  'Fira Sans', sans-serif;
+
+  /* Police code — packages LaTeX, extraits WRIML, snippets */
+  --font-code:       'Fira Code', 'Fira Mono', monospace;
+
+  /* Police print — CV et documents PDF uniquement */
+  --font-print:      'EB Garamond', Georgia, serif;
+
+
+  /* ============================================================
+     3. HIÉRARCHIE TYPOGRAPHIQUE
+     ============================================================
+     Toute la hiérarchie est en Fira Sans.
+     Les poids disponibles : 300 (Light), 400 (Regular),
+     500 (Medium), 600 (SemiBold).
+
+     TAILLE DE BASE : 16px (≈ 12pt print).
+     Pour modifier la taille globale, changer --text-base
+     et les valeurs rem suivront automatiquement.
+
+     HIÉRARCHIE :
+     --text-hero    48px   h1 hero, nom                Light 300
+     --text-3xl     36px   h1 titres de page           Light 300
+     --text-2xl     28px   (réservé si besoin)
+     --text-xl      22px   h2 titres de sections       SemiBold 600
+     --text-lg      18px   h3 sous-titres              Medium 500
+     --text-md      17px   corps légèrement agrandi
+     --text-base    16px   corps courant               Light 300
+     --text-sm      14px   labels, nav, badges         Regular 400
+     --text-xs      12px   métadonnées, dates          Regular 400
+     --text-code    14px   code                        Fira Code 400
+     ============================================================ */
+
+  --text-hero:   3rem;       /* 48px — hero name */
+  --text-3xl:    2.25rem;    /* 36px — page titles h1 */
+  --text-2xl:    1.75rem;    /* 28px — reserved */
+  --text-xl:     1.375rem;   /* 22px — section titles h2 */
+  --text-lg:     1.125rem;   /* 18px — subsection titles h3 */
+  --text-md:     1.0625rem;  /* 17px — slightly larger body */
+  --text-base:   1rem;       /* 16px — body text (base) */
+  --text-sm:     0.875rem;   /* 14px — labels, nav, badges */
+  --text-xs:     0.75rem;    /* 12px — metadata, dates */
+  --text-code:   0.875rem;   /* 14px — code blocks */
+
+  /* Poids typographiques — nommés pour clarté */
+  --weight-light:    300;   /* corps courant, grands titres */
+  --weight-regular:  400;   /* labels, nav, métadonnées */
+  --weight-medium:   500;   /* h3, emphasis modéré */
+  --weight-semibold: 600;   /* h2, titres de sections */
+
+  /* Interlignage */
+  --leading-tight:   1.2;   /* titres */
+  --leading-normal:  1.6;   /* corps courant */
+  --leading-loose:   1.8;   /* textes académiques longs */
+
+  /* Espacement des lettres */
+  --tracking-tight:  -0.01em;  /* grands titres */
+  --tracking-normal:  0;
+  --tracking-wide:    0.06em;  /* labels, badges, nav */
+  --tracking-wider:   0.10em;  /* discipline tag hero */
+
+
+  /* ============================================================
+     4. ESPACEMENTS
+     ============================================================
+     Échelle modulaire basée sur 4px.
+     Utiliser ces variables plutôt que des valeurs arbitraires.
+     ============================================================ */
+
+  --space-1:   0.25rem;   /*  4px */
+  --space-2:   0.5rem;    /*  8px */
+  --space-3:   0.75rem;   /* 12px */
+  --space-4:   1rem;      /* 16px */
+  --space-6:   1.5rem;    /* 24px */
+  --space-8:   2rem;      /* 32px */
+  --space-10:  2.5rem;    /* 40px */
+  --space-12:  3rem;      /* 48px */
+  --space-16:  4rem;      /* 64px */
+  --space-20:  5rem;      /* 80px */
+  --space-24:  6rem;      /* 96px */
+
+  /* Alias sémantiques — préférer ces noms dans les composants */
+  --space-xs:  var(--space-1);
+  --space-sm:  var(--space-2);
+  --space-md:  var(--space-4);
+  --space-lg:  var(--space-6);
+  --space-xl:  var(--space-10);
+  --space-2xl: var(--space-16);
+  --space-3xl: var(--space-24);
+
+
+  /* ============================================================
+     5. LAYOUT
+     ============================================================ */
+
+  /* Largeur maximale du contenu — toutes les pages */
+  --max-width:       900px;
+
+  /* Hauteur de la navigation sticky */
+  --nav-height:      64px;
+
+  /* Padding horizontal des containers sur desktop */
+  --container-px:    var(--space-10);  /* 40px */
+
+
+  /* ============================================================
+     6. BORDURES & RAYONS
+     ============================================================ */
+
+  --radius-sm:   4px;     /* boutons, badges */
+  --radius-md:   8px;     /* cards */
+  --radius-lg:   16px;    /* photo hero, grandes cards */
+  --radius-pill: 999px;   /* badges pill, profile links */
+
+  --border-thin: 1px solid;
+  --border-mid:  2px solid;
+
+
+  /* ============================================================
+     7. OMBRES
+     ============================================================
+     Teintées légèrement canard pour cohérence chromatique.
+     ============================================================ */
+
+  --shadow-sm: 0 1px 3px rgba(2, 26, 24, 0.08);
+  --shadow-md: 0 4px 16px rgba(2, 26, 24, 0.10);
+  --shadow-lg: 0 8px 32px rgba(2, 26, 24, 0.12);
+
+
+  /* ============================================================
+     8. TRANSITIONS
+     ============================================================ */
+
+  --transition-fast: 150ms ease;   /* hover, focus */
+  --transition-mid:  250ms ease;   /* apparitions, toggles */
+  --transition-slow: 400ms ease;   /* animations de page */
+
+
+  /* ============================================================
+     9. MODE CLAIR — variables sémantiques (défaut)
+     ============================================================
+     Ces variables sont celles utilisées dans tous les composants.
+     Elles pointent vers les couleurs du mode actif.
+     Pour modifier un aspect global, changer ici.
+     ============================================================ */
+
+  --bg:           var(--color-ivoire);   /* fond principal */
+  --bg-alt:       #f0f0ea;               /* fond alternatif (sections, hover) */
+  --text:         var(--color-noir);     /* texte principal */
+  --text-muted:   var(--color-gris);     /* texte secondaire, métadonnées */
+  --border:       #d8d8d2;              /* bordures subtiles */
+  --accent:       var(--color-canard);   /* couleur d'accent principale */
+  --accent-on:    var(--color-ivoire);   /* texte sur fond accent */
+
+}
+
+
+/* ============================================================
+   10. MODE SOMBRE
+   ============================================================
+   Inversion basée sur la palette existante.
+   --color-noir devient le fond, --color-ivoire devient le texte.
+   --color-canard tient bien sur fond sombre — pas de changement.
+   ============================================================ */
+
+[data-theme="dark"] {
+  --bg:           var(--color-noir);
+  --bg-alt:       #0a2825;
+  --text:         var(--color-ivoire);
+  --text-muted:   #9aabaa;
+  --border:       #1e3a37;
+  --accent:       var(--color-canard);   /* inchangé — tient sur fond sombre */
+  --accent-on:    var(--color-ivoire);
+
+  /* Pale canard plus sombre en dark mode */
+  --color-canard-pale: #0d2e2b;
+
+  /* Ombres plus prononcées sur fond sombre */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.30);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.40);
+}
+
+
+/* ============================================================
+   11. RESET MINIMAL
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;          /* base — modifier --text-base si besoin */
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-interface);
+  font-weight: var(--weight-light);    /* Light 300 par défaut */
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--text);
+  background-color: var(--bg);
+  transition:
+    background-color var(--transition-mid),
+    color var(--transition-mid);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-canard-light);
+}
+
+
+/* ============================================================
+   12. UTILITAIRES GLOBAUX
+   ============================================================ */
+
+/* Conteneur centré — utilisé sur toutes les pages */
+.container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+/* Hiérarchie h1–h3 — Fira Sans uniquement */
+h1 {
+  font-family: var(--font-interface);
+  font-weight: var(--weight-light);
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text);
+}
+
+h2 {
+  font-family: var(--font-interface);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+  color: var(--text);
+}
+
+h3 {
+  font-family: var(--font-interface);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-lg);
+  line-height: var(--leading-tight);
+  color: var(--text);
+}
+
+p {
+  font-weight: var(--weight-light);
+  line-height: var(--leading-normal);
+}
+
+/* Texte académique long — interlignage élargi */
+.prose {
+  font-size: var(--text-base);
+  font-weight: var(--weight-light);
+  line-height: var(--leading-loose);
+  max-width: 68ch;   /* largeur de lecture optimale */
+}
+
+.prose p + p {
+  margin-top: var(--space-4);
+}
+
+/* Code inline */
+code {
+  font-family: var(--font-code);
+  font-size: var(--text-code);
+  background-color: var(--bg-alt);
+  padding: 0.1em 0.4em;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+}
+
+/* Métadonnées — dates, journaux, lieux */
+.meta {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  color: var(--text-muted);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* Label discipline / catégorie */
+.label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+
+/* ============================================================
+   13. BADGES — types de publications et talks
+   ============================================================
+   Système de badges pill pour catégoriser les entrées.
+
+   Types disponibles :
+   .badge--article    Articles à comité — fond canard pâle
+   .badge--chapter    Chapitres / actes — neutre
+   .badge--preprint   Preprints / working papers — bordure canard
+   .badge--talk       Talks / conférences — turquoise
+   .badge--intl       Conférence internationale — accent discret
+   .badge--release    Releases outils — style code
+   ============================================================ */
+
+.badge {
+  display: inline-block;
+  font-family: var(--font-interface);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  line-height: 1.8;
+  white-space: nowrap;
+}
+
+.badge--article {
+  background: var(--color-canard-pale);
+  color: var(--color-canard);
+  border: 1px solid var(--color-canard);
+}
+
+.badge--chapter {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.badge--preprint {
+  background: transparent;
+  color: var(--color-canard);
+  border: 1px solid var(--color-canard);
+}
+
+.badge--talk {
+  background: rgba(100, 204, 204, 0.12);
+  color: var(--color-canard);
+  border: 1px solid var(--color-turquoise);
+}
+
+/* Badge international — discret, présent sans s'imposer */
+.badge--intl {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  font-size: 10px;
+  letter-spacing: var(--tracking-wider);
+  padding: 1px 8px;
+  vertical-align: middle;
+}
+
+.badge--release {
+  font-family: var(--font-code);
+  font-size: var(--text-xs);
+  background: var(--bg-alt);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.badge--web {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+
+/* ============================================================
+   14. PRINT
+   ============================================================
+   Règles appliquées lors de l'impression ou export PDF.
+   EB Garamond réapparaît ici — usage print uniquement.
+   ============================================================ */
+
+@media print {
+
+  :root {
+    --bg:         #ffffff;
+    --text:       #000000;
+    --text-muted: #555555;
+    --border:     #cccccc;
+  }
+
+  body {
+    font-family: var(--font-print);   /* EB Garamond en print */
+    font-weight: 400;
+    font-size: 11pt;
+    color: #000;
+    background: #fff;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-print);
+    font-weight: 700;
+  }
+
+  /* Masquer les éléments de navigation */
+  nav,
+  .theme-toggle,
+  .nav-burger,
+  .scroll-top,
+  footer {
+    display: none !important;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Afficher les URLs après les liens dans le texte imprimé */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #666;
+  }
+
+  /* Éviter les coupures de page dans les entrées */
+  .publication-entry,
+  .talk-entry {
+    page-break-inside: avoid;
+  }
+
+}
