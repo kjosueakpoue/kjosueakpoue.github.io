@@ -196,3 +196,45 @@
     display: none;
   }
 }
+
+
+/* ============================================================
+   OUTIL EN DÉVELOPPEMENT
+   ============================================================
+   Variante de .tool-feature pour les outils sans release.
+   Bordure en pointillés au lieu de pleine.
+   ============================================================ */
+
+.tool-feature--dev {
+  border-style: dashed;
+  background-color: var(--bg);
+}
+
+.tool-entry--dev {
+  border-style: dashed;
+  opacity: 0.9;
+}
+
+
+/* ============================================================
+   RELATIONS ENTRE OUTILS
+   ============================================================ */
+
+.tool-relation {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+}
+
+.tool-relation__link {
+  font-weight: var(--weight-medium);
+  color: var(--accent);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+}
+
+.tool-relation__link:hover {
+  color: var(--color-canard-light);
+}
