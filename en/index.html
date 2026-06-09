@@ -288,10 +288,10 @@ css:
             <p class="pub-entry__title">
               {% if pub.doi %}
                 <a href="{{ pub.doi }}" target="_blank" rel="noopener">
-                  {{ pub.title.en }}
+                  {{ pub.title_translated.en }}
                 </a>
               {% else %}
-                {{ pub.title.en }}
+                {{ pub.title_translated.en }}
               {% endif %}
             </p>
             <p class="pub-entry__ref meta">
