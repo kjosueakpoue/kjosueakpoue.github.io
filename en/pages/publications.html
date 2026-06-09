@@ -48,10 +48,15 @@ css:
           <p class="pub-entry__title">
             {% if pub.doi %}
               <a href="{{ pub.doi }}" target="_blank" rel="noopener">
-                {{ pub.title.en }}
+                {{ pub.title_original }}
               </a>
             {% else %}
-              {{ pub.title.en }}
+              {{ pub.title_original }}
+            {% endif %}
+            {% if pub.title_translated.en and pub.lang_pub == 'fr' %}
+              <span class="pub-entry__translation meta">
+                [{{ pub.title_translated.en }}]
+              </span>
             {% endif %}
           </p>
 
@@ -105,7 +110,14 @@ css:
         </div>
 
         <div class="pub-entry__body">
-          <p class="pub-entry__title">{{ pub.title.en }}</p>
+          <p class="pub-entry__title">
+            {{ pub.title_original }}
+            {% if pub.title_translated.en and pub.lang_pub == 'fr' %}
+              <span class="pub-entry__translation meta">
+                [{{ pub.title_translated.en }}]
+              </span>
+            {% endif %}
+          </p>
           <p class="pub-entry__authors meta">{{ pub.authors.en }}</p>
           <p class="pub-entry__ref meta">
             {% if pub.booktitle %}<em>{{ pub.booktitle.en }}</em>{% endif %}
@@ -199,10 +211,10 @@ css:
           <p class="pub-entry__title">
             {% if pub.url %}
               <a href="{{ pub.url }}" target="_blank" rel="noopener">
-                {{ pub.title.en }}
+                {{ pub.title_original }}
               </a>
             {% else %}
-              {{ pub.title.en }}
+              {{ pub.title_original }}
             {% endif %}
           </p>
           <p class="pub-entry__authors meta">{{ pub.authors.en }}</p>
