@@ -2,8 +2,14 @@
 # tools.yml
 # Akpoué Kouamé Josué — Outils & Projets de développement
 # ============================================================
-# Types : language | package | macro
-# Status : active | beta | stable | on-hold
+# Types    : language | dsl | package | macro
+# Status   : active | stable | beta | in-development | on-hold
+#
+# RELATIONS ENTRE OUTILS :
+# related     : id de l'outil associé (ex: φ → math4lin)
+# support_for : id de l'outil que ce paquet supporte (ex: math4lin → phi)
+#
+# AJOUTER UN OUTIL : copier un bloc, adapter les champs.
 # ============================================================
 
 # ------------------------------------------------------------
@@ -23,20 +29,106 @@
   url_site: "https://dbjoshua.github.io/WRIML"
   url_github: "https://github.com/wriml"
   version_current: "3.0"
+  related:
+
+# ------------------------------------------------------------
+# DSL — NOTATION FORMELLE
+# ------------------------------------------------------------
+
+- id: phi
+  type: dsl
+  status: in-development
+  name: "φ (phi)"
+  fullname:
+    en: "φ — Notation interface for formal linguistics"
+    fr: "φ — Interface de notation pour la linguistique formelle"
+  description:
+    en: >
+      A lightweight notation syntax for formal semantics. Write logical
+      formulas, lambda expressions, semantic types, and denotations without
+      memorizing dozens of LaTeX commands. The specification (v0.2.0) and
+      formal EBNF grammar are stable, but backends are not yet released —
+      φ is currently usable for quick notes but not yet ready for editorial
+      or publication workflows.
+    fr: >
+      Une syntaxe de notation légère pour la sémantique formelle. Écrivez
+      des formules logiques, des expressions lambda, des types sémantiques
+      et des dénotations sans mémoriser des dizaines de commandes LaTeX.
+      La spécification (v0.2.0) et la grammaire EBNF formelle sont stables,
+      mais les backends ne sont pas encore publiés — φ est utilisable pour
+      des notes rapides mais pas encore prêt pour les flux d'édition et
+      de publication.
+  version_current: "0.2.0"
+  url_site:
+  url_github: "https://github.com/phi-project/phi"
+  related: "math4lin"        # paquet LaTeX de support officiel
 
 # ------------------------------------------------------------
 # PACKAGES LATEX
 # ------------------------------------------------------------
+
+- id: math4lin
+  type: package
+  status: in-development
+  name: "math4lin"
+  platform: "LaTeX"
+  fullname:
+    en: "math4lin — Official LaTeX support package for φ"
+    fr: "math4lin — Paquet LaTeX de support officiel de φ"
+  description:
+    en: >
+      The official LaTeX backend for φ. Compiles φ notation to LaTeX
+      commands via expl3 pattern matching. Intended for drop-in integration
+      into existing LaTeX workflows. Not yet released — development in
+      progress alongside the φ specification.
+    fr: >
+      Le backend LaTeX officiel de φ. Compile la notation φ en commandes
+      LaTeX via pattern matching expl3. Conçu pour une intégration
+      transparente dans les flux LaTeX existants. Pas encore publié —
+      développement en cours parallèlement à la spécification φ.
+  support_for: "phi"         # supporte le DSL φ
+  url_github: "https://github.com/phi-project/phi"
+  url_ctan:
+  version_current:
 
 - id: xsipa
   type: package
   status: stable
   name: "xsipa"
   platform: "LaTeX"
+  fullname:
+    en: "xsipa — XSAMPA shortcuts for phonetic transcription"
+    fr: "xsipa — Raccourcis XSAMPA pour la transcription phonétique"
   description:
-    en: "A LaTeX package for linguistic interlinear glossing."
-    fr: "Un package LaTeX pour la glose interlinéaire en linguistique."
+    en: "A LaTeX package providing shorthand commands for phonetic transcription, based on XSAMPA notation. Reduces verbosity of tipa-style commands for IPA transcription in linguistic documents."
+    fr: "Un package LaTeX fournissant des commandes abrégées pour la transcription phonétique, basé sur la notation XSAMPA. Réduit la verbosité des commandes de style tipa pour la transcription API dans les documents linguistiques."
   url_github: "https://github.com/dbjoshua/linguists-tex"
+  url_ctan:
+  version_current:
+  related: "lipa"            # successeur conceptuel : lipa
+
+- id: lipa
+  type: package
+  status: in-development
+  name: "lipa"
+  platform: "LaTeX"
+  fullname:
+    en: "lipa — Unicode IPA to LaTeX translation layer"
+    fr: "lipa — Couche de traduction Unicode API vers LaTeX"
+  description:
+    en: >
+      A LaTeX package that translates Unicode IPA input to tipa commands
+      on-the-fly. Rather than shortening transcription commands (as xsipa
+      does), lipa acts as a transparent translation layer: type directly
+      in Unicode IPA, get tipa output. More ambitious than xsipa —
+      currently in development.
+    fr: >
+      Un package LaTeX qui traduit la saisie Unicode API en commandes tipa
+      à la volée. Plutôt que de raccourcir les commandes de transcription
+      (comme xsipa), lipa agit comme une couche de traduction transparente :
+      saisissez directement en Unicode API, obtenez une sortie tipa. Plus
+      ambitieux que xsipa — actuellement en développement.
+  url_github:
   url_ctan:
   version_current:
 
@@ -45,21 +137,12 @@
   status: stable
   name: "interlinear"
   platform: "LaTeX"
+  fullname:
+    en: "interlinear — Interlinear glossing for LaTeX"
+    fr: "interlinear — Glose interlinéaire pour LaTeX"
   description:
-    en: "LaTeX interlinear glossing package."
-    fr: "Package LaTeX pour la glose interlinéaire."
-  url_github: "https://github.com/dbjoshua/linguists-tex"
-  url_ctan:
-  version_current:
-
-- id: math4linsy
-  type: package
-  status: beta
-  name: "math4linsy"
-  platform: "LaTeX"
-  description:
-    en: "A LaTeX package providing mathematical tools for formal linguistics and syntax."
-    fr: "Un package LaTeX fournissant des outils mathématiques pour la linguistique formelle et la syntaxe."
+    en: "LaTeX package for typesetting interlinear glossed examples in linguistic documents."
+    fr: "Package LaTeX pour la composition d'exemples en glose interlinéaire dans les documents linguistiques."
   url_github: "https://github.com/dbjoshua/linguists-tex"
   url_ctan:
   version_current:
@@ -72,11 +155,11 @@
   type: macro
   status: active
   name:
-    en: "VBA macros for scientific writing"
-    fr: "Macros VBA pour la rédaction scientifique"
+    en: "VBA & LibreOffice macros"
+    fr: "Macros VBA & LibreOffice"
   platform: "Microsoft Office / LibreOffice"
   description:
-    en: "A collection of VBA and LibreOffice macros designed to streamline scientific writing workflows."
-    fr: "Une collection de macros VBA et LibreOffice conçues pour optimiser les flux de travail de rédaction scientifique."
+    en: "A collection of VBA and LibreOffice macros designed to streamline scientific writing workflows — including φ transformation support for Word and LibreOffice."
+    fr: "Une collection de macros VBA et LibreOffice conçues pour optimiser les flux de travail de rédaction scientifique — incluant le support de transformation φ pour Word et LibreOffice."
   url_github: "https://github.com/dbjoshua"
   version_current:
