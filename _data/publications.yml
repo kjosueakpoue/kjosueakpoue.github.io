@@ -3,8 +3,18 @@
 # Akpoué Kouamé Josué — Publications
 # ============================================================
 # Types : article | proceedings | web
-# Scope : (non utilisé ici — réservé aux talks)
 # Pour ajouter une entrée : copier un bloc, modifier les champs
+#
+# CHAMPS TITRE :
+# title_original  → titre exact tel que publié (toujours affiché
+#                   sur la page Publications) — NE PAS TRADUIRE
+# title_translated → traduction pour les aperçus homepage
+#   .en            → traduction anglaise
+#   .fr            → traduction française
+#
+# RÈGLE : sur la page Publications, toujours afficher title_original.
+#         Sur la homepage, afficher title_translated.en ou .fr
+#         selon la langue du visiteur.
 # ============================================================
 
 # ------------------------------------------------------------
@@ -14,10 +24,12 @@
 - id: akpoue2025zigsem
   year: 2025
   type: article
+  lang_pub: fr
   authors:
     en: "Akpoué, K. J."
     fr: "Akpoué, K. J."
-  title:
+  title_original: "Introduction à la sémantique minimaliste"
+  title_translated:
     en: "Introduction to minimalist semantics"
     fr: "Introduction à la sémantique minimaliste"
   journal: "Ziglôbitha"
@@ -29,10 +41,12 @@
 - id: akpoue2022ltml_coord
   year: 2022
   type: article
+  lang_pub: fr
   authors:
     en: "Akpoué, K. J. & Kpami Boni, C. M."
     fr: "Akpoué, K. J. & Kpami Boni, C. M."
-  title:
+  title_original: "Structure de la coordination conjonctive des DP en Modjukru"
+  title_translated:
     en: "Structure of conjunctive coordination of DPs in Modjukru"
     fr: "Structure de la coordination conjonctive des DP en Modjukru"
   journal: "Revue du LTML"
@@ -43,10 +57,12 @@
 - id: akpoue2022ltml_names
   year: 2022
   type: article
+  lang_pub: fr
   authors:
     en: "Akpoué, K. J."
     fr: "Akpoué, K. J."
-  title:
+  title_original: "De la signification des noms et pronoms propres"
+  title_translated:
     en: "On the meaning of proper names and proper pronouns"
     fr: "De la signification des noms et pronoms propres"
   journal: "Revue du LTML"
@@ -59,10 +75,12 @@
 - id: akpoue2022ltml_neocomp
   year: 2022
   type: article
+  lang_pub: fr
   authors:
     en: "Akpoué, K. J."
     fr: "Akpoué, K. J."
-  title:
+  title_original: "Pour une sémantique formelle componentielle : Introduction à la sémantique néo-componentielle"
+  title_translated:
     en: "Towards a formal componential semantics: Introduction to neo-componential semantics"
     fr: "Pour une sémantique formelle componentielle : Introduction à la sémantique néo-componentielle"
   journal: "Revue du LTML"
@@ -75,10 +93,12 @@
 - id: akpoue2022ltml_def
   year: 2022
   type: article
+  lang_pub: fr
   authors:
     en: "Akpoué, K. J. & Kouakou N'Guessan, G."
     fr: "Akpoué, K. J. & Kouakou N'Guessan, G."
-  title:
+  title_original: "Remarques sur la définitude en Baoulé"
+  title_translated:
     en: "Remarks on definiteness in Baule"
     fr: "Remarques sur la définitude en Baoulé"
   journal: "Revue du LTML"
@@ -91,10 +111,12 @@
 - id: akpoue2020harmattan_def
   year: 2020
   type: article
+  lang_pub: fr
   authors:
     en: "Akpoué, K. J. & Kouakou N'Guessan, G."
     fr: "Akpoué, K. J. & Kouakou N'Guessan, G."
-  title:
+  title_original: "La définitude en baoulé : une introduction formelle"
+  title_translated:
     en: "Definiteness in Baule: A formal introduction"
     fr: "La définitude en baoulé : une introduction formelle"
   booktitle:
@@ -109,10 +131,12 @@
 - id: akpoue2018annales_etji
   year: 2018
   type: article
+  lang_pub: fr
   authors:
     en: "Akpoué, K. J., Bogny, Y. J. & Kpami Boni, C. M."
     fr: "Akpoué, K. J., Bogny, Y. J. & Kpami Boni, C. M."
-  title:
+  title_original: "etʃi et marquage du temps dans le DP en modjukru"
+  title_translated:
     en: "etʃi and the marking of tense inside the DP in Modjukru"
     fr: "etʃi et marquage du temps dans le DP en modjukru"
   journal: "Annales de la Faculté des Lettres et Sciences Humaines"
@@ -123,10 +147,12 @@
 - id: akpoue2018della_bere
   year: 2018
   type: article
+  lang_pub: fr
   authors:
     en: "Akpoué, K. J. & Kouakou N'Guessan, G."
     fr: "Akpoué, K. J. & Kouakou N'Guessan, G."
-  title:
+  title_original: "Attitude des locuteurs et vitalité des langues : cas du Bere, langue en danger de Côte d'Ivoire"
+  title_translated:
     en: "Language attitude and language vitality: The case of Bere, an endangered language of Côte d'Ivoire"
     fr: "Attitude des locuteurs et vitalité des langues : cas du Bere, langue en danger de Côte d'Ivoire"
   journal: "Revue Della/Afrique"
@@ -138,10 +164,12 @@
 - id: akpoue2018cercls_tense
   year: 2018
   type: article
+  lang_pub: fr
   authors:
     en: "Akpoué, K. J."
     fr: "Akpoué, K. J."
-  title:
+  title_original: "Elicitation des morphèmes de temps dans les langues naturelles via le test de focalisation du temps : Cas du baoulé et du wobé"
+  title_translated:
     en: "Eliciting tense morphemes in natural languages using the time focus test: The case of Baule and Wobe"
     fr: "Elicitation des morphèmes de temps dans les langues naturelles via le test de focalisation du temps : Cas du baoulé et du wobé"
   journal: "Revue du CERCLS"
@@ -159,10 +187,12 @@
 - id: akpoue2018espana_tam
   year: 2018
   type: proceedings
+  lang_pub: fr
   authors:
     en: "Akpoué, K. J. & Kouakou N'Guessan, G."
     fr: "Akpoué, K. J. & Kouakou N'Guessan, G."
-  title:
+  title_original: "Encodage lexical des TAM dans les langues naturelles : cas du Bere et du Baoulé"
+  title_translated:
     en: "Lexical encoding of TAM in natural languages: The case of Bere and Baule"
     fr: "Encodage lexical des TAM dans les langues naturelles : cas du Bere et du Baoulé"
   booktitle:
@@ -174,10 +204,12 @@
 - id: akpoue2018voltacongo_coord
   year: 2018
   type: proceedings
+  lang_pub: fr
   authors:
     en: "Akpoué, K. J. & Ahoundjo-Della, R. A."
     fr: "Akpoué, K. J. & Ahoundjo-Della, R. A."
-  title:
+  title_original: "Coordination et Subordination dans quelques langues Kwa"
+  title_translated:
     en: "Coordination and subordination in some Kwa languages"
     fr: "Coordination et Subordination dans quelques langues Kwa"
   booktitle:
@@ -193,10 +225,12 @@
 - id: akpoue2017terraling_baule_sswl
   year: 2017
   type: web
+  lang_pub: en
   authors:
     en: "Akpoué, K. J."
     fr: "Akpoué, K. J."
-  title:
+  title_original: "Language expert for Baule (Agba) — TerraLing group SSWL"
+  title_translated:
     en: "Language expert for Baule (Agba) — TerraLing group SSWL"
     fr: "Expert linguistique pour le Baoulé (Agba) — Groupe TerraLing SSWL"
   platform: "TerraLing"
@@ -205,10 +239,12 @@
 - id: akpoue2017terraling_baule_cd
   year: 2017
   type: web
+  lang_pub: en
   authors:
     en: "Akpoué, K. J."
     fr: "Akpoué, K. J."
-  title:
+  title_original: "Language expert for Baule (Agba) — TerraLing group Conjunction & Disjunction"
+  title_translated:
     en: "Language expert for Baule (Agba) — TerraLing group Conjunction & Disjunction"
     fr: "Expert linguistique pour le Baoulé (Agba) — Groupe TerraLing Conjonction & Disjonction"
   platform: "TerraLing"
@@ -217,10 +253,12 @@
 - id: akpoue2017terraling_ivfr_sswl
   year: 2017
   type: web
+  lang_pub: en
   authors:
     en: "Akpoué, K. J."
     fr: "Akpoué, K. J."
-  title:
+  title_original: "Language expert for Ivorian French — TerraLing group SSWL"
+  title_translated:
     en: "Language expert for Ivorian French — TerraLing group SSWL"
     fr: "Expert linguistique pour le Français ivoirien — Groupe TerraLing SSWL"
   platform: "TerraLing"
@@ -229,10 +267,12 @@
 - id: akpoue2017terraling_ivfr_cd
   year: 2017
   type: web
+  lang_pub: en
   authors:
     en: "Akpoué, K. J."
     fr: "Akpoué, K. J."
-  title:
+  title_original: "Language expert for Ivorian French — TerraLing group Conjunction & Disjunction"
+  title_translated:
     en: "Language expert for Ivorian French — TerraLing group Conjunction & Disjunction"
     fr: "Expert linguistique pour le Français ivoirien — Groupe TerraLing Conjonction & Disjonction"
   platform: "TerraLing"
