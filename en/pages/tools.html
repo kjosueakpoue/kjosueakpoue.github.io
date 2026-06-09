@@ -5,7 +5,7 @@ alt_url: "pages/outils.html"
 title: "Tools"
 subtitle: "Computational tools for scientific writing, linguistic documentation, and formal analysis."
 label: "Akpoué Kouamé Josué"
-description: "Tools developed by Akpoué Kouamé Josué — WRIML, LaTeX packages, macros for scientific writing."
+description: "Tools developed by Akpoué Kouamé Josué — WRIML, φ, LaTeX packages, macros."
 css:
   - tools.css
 ---
@@ -15,12 +15,10 @@ css:
      ============================================================
      SECTIONS :
      1. WRIML          (_data/tools.yml, type: language)
-     2. LaTeX packages (_data/tools.yml, type: package)
-     3. Macros         (_data/tools.yml, type: macro)
-     4. Latest releases (_data/releases.yml)
-     ============================================================
-     AJOUTER UN OUTIL   → _data/tools.yml
-     AJOUTER UNE RELEASE → _data/releases.yml
+     2. φ (phi)        (_data/tools.yml, type: dsl)
+     3. LaTeX packages (_data/tools.yml, type: package)
+     4. Macros         (_data/tools.yml, type: macro)
+     5. Latest releases (_data/releases.yml)
      ============================================================ -->
 
 
@@ -36,37 +34,28 @@ css:
   </div>
 
   <div class="tool-feature">
-
     <div class="tool-feature__body">
       <div class="tool-feature__meta">
-        <span class="badge badge--release">{{ wriml.status }}</span>
+        <span class="badge badge--article">{{ wriml.status }}</span>
         <span class="badge badge--release">v{{ wriml.version_current }}</span>
         <span class="label">Documentary markup language</span>
       </div>
-
       <div class="prose">
         <p>{{ wriml.description.en }}</p>
       </div>
-
       <div class="tool-feature__links">
         {% if wriml.url_site %}
           <a href="{{ wriml.url_site }}" class="btn btn--primary"
-             target="_blank" rel="noopener">
-            Documentation →
-          </a>
+             target="_blank" rel="noopener">Documentation →</a>
         {% endif %}
         {% if wriml.url_github %}
           <a href="{{ wriml.url_github }}" class="btn btn--ghost"
-             target="_blank" rel="noopener">
-            GitHub →
-          </a>
+             target="_blank" rel="noopener">GitHub →</a>
         {% endif %}
       </div>
     </div>
-
   </div>
 
-  <!-- Releases WRIML -->
   {% assign wriml_releases = site.data.releases | where: "tool_id", "wriml" %}
   {% if wriml_releases.size > 0 %}
     <div class="releases-mini">
@@ -86,36 +75,100 @@ css:
       </div>
     </div>
   {% endif %}
-
 </section>
 
 
 <!-- ============================================================
-     2. LATEX PACKAGES
+     2. φ (PHI) — DSL DE NOTATION FORMELLE
      ============================================================ -->
-<section class="section section--alt" id="latex">
+{% assign phi = site.data.tools | where: "id", "phi" | first %}
+{% assign math4lin = site.data.tools | where: "id", "math4lin" | first %}
+
+<section class="section section--alt" id="phi">
+  <div class="section-header">
+    <h2 class="section-title">{{ phi.name }}</h2>
+    <p class="section-subtitle">{{ phi.fullname.en }}</p>
+  </div>
+
+  <div class="tool-feature tool-feature--dev">
+    <div class="tool-feature__body">
+      <div class="tool-feature__meta">
+        <span class="badge badge--preprint">{{ phi.status }}</span>
+        <span class="badge badge--release">v{{ phi.version_current }}</span>
+        <span class="label">Notation DSL</span>
+      </div>
+      <div class="prose">
+        <p>{{ phi.description.en }}</p>
+      </div>
+      <!-- Relation : paquet LaTeX de support -->
+      {% if phi.related %}
+        <div class="tool-relation">
+          <span class="meta">LaTeX backend :</span>
+          <a href="#{{ phi.related }}" class="tool-relation__link">
+            {{ math4lin.name }} →
+          </a>
+        </div>
+      {% endif %}
+      <div class="tool-feature__links">
+        {% if phi.url_github %}
+          <a href="{{ phi.url_github }}" class="btn btn--ghost"
+             target="_blank" rel="noopener">GitHub →</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     3. LATEX PACKAGES
+     ============================================================ -->
+<section class="section" id="latex">
   <div class="section-header">
     <h2 class="section-title">LaTeX packages</h2>
     <p class="section-subtitle">
-      Packages for linguistic typesetting — interlinear glossing,
-      formal syntax and semantics notation.
+      Packages for linguistic typesetting — phonetic transcription,
+      interlinear glossing, formal semantics notation.
     </p>
   </div>
 
   <div class="tools-list">
     {% assign packages = site.data.tools | where: "type", "package" %}
     {% for tool in packages %}
-      <article class="tool-entry" id="{{ tool.id }}">
+      <article class="tool-entry {% if tool.status == 'in-development' %}tool-entry--dev{% endif %}"
+               id="{{ tool.id }}">
 
         <div class="tool-entry__header">
           <div class="tool-entry__name-wrap">
             <code class="tool-entry__name">{{ tool.name }}</code>
-            <span class="badge badge--release">{{ tool.status }}</span>
+            <span class="badge badge--{% if tool.status == 'stable' %}article{% elsif tool.status == 'in-development' %}preprint{% else %}release{% endif %}">
+              {{ tool.status }}
+            </span>
           </div>
           <span class="meta">{{ tool.platform }}</span>
         </div>
 
         <p class="tool-entry__desc">{{ tool.description.en }}</p>
+
+        <!-- Relation : support_for ou related -->
+        {% if tool.support_for %}
+          {% assign parent = site.data.tools | where: "id", tool.support_for | first %}
+          <p class="tool-relation meta">
+            Official LaTeX backend for
+            <a href="#{{ tool.support_for }}" class="tool-relation__link">
+              {{ parent.name }}
+            </a>
+          </p>
+        {% endif %}
+        {% if tool.related %}
+          {% assign sibling = site.data.tools | where: "id", tool.related | first %}
+          <p class="tool-relation meta">
+            Conceptual successor :
+            <a href="#{{ tool.related }}" class="tool-relation__link">
+              {{ sibling.name }}
+            </a>
+          </p>
+        {% endif %}
 
         <div class="tool-entry__links">
           {% if tool.url_ctan %}
@@ -135,9 +188,9 @@ css:
 
 
 <!-- ============================================================
-     3. MACROS
+     4. MACROS
      ============================================================ -->
-<section class="section" id="macros">
+<section class="section section--alt" id="macros">
   <div class="section-header">
     <h2 class="section-title">Macros</h2>
     <p class="section-subtitle">
@@ -149,7 +202,6 @@ css:
     {% assign macros = site.data.tools | where: "type", "macro" %}
     {% for tool in macros %}
       <article class="tool-entry" id="{{ tool.id }}">
-
         <div class="tool-entry__header">
           <div class="tool-entry__name-wrap">
             <span class="tool-entry__name--text">{{ tool.name.en }}</span>
@@ -157,16 +209,13 @@ css:
           </div>
           <span class="meta">{{ tool.platform }}</span>
         </div>
-
         <p class="tool-entry__desc">{{ tool.description.en }}</p>
-
         <div class="tool-entry__links">
           {% if tool.url_github %}
             <a href="{{ tool.url_github }}" class="pub-link"
                target="_blank" rel="noopener">GitHub →</a>
           {% endif %}
         </div>
-
       </article>
     {% endfor %}
   </div>
@@ -174,9 +223,9 @@ css:
 
 
 <!-- ============================================================
-     4. ALL RELEASES
+     5. ALL RELEASES
      ============================================================ -->
-<section class="section section--alt" id="releases">
+<section class="section" id="releases">
   <div class="section-header">
     <h2 class="section-title">All releases</h2>
   </div>
@@ -185,20 +234,15 @@ css:
     {% assign releases = site.data.releases | sort: "year" | reverse %}
     {% for rel in releases %}
       <article class="pub-entry">
-
         <div class="pub-entry__year">
           <span class="meta">{{ rel.year }}</span>
         </div>
-
         <div class="pub-entry__body">
           <p class="pub-entry__title">{{ rel.title.en }}</p>
           <p class="pub-entry__ref meta">
             {{ rel.tool_id | upcase }} · v{{ rel.version }}
             {% if rel.month %} · {{ rel.month }}{% endif %}
           </p>
-          {% if rel.notes.en != "" %}
-            <p class="pub-entry__ref meta">{{ rel.notes.en }}</p>
-          {% endif %}
           <div class="pub-entry__links">
             {% if rel.url %}
               <a href="{{ rel.url }}" class="pub-link"
@@ -210,11 +254,9 @@ css:
             {% endif %}
           </div>
         </div>
-
         <div class="pub-entry__badge">
           <span class="badge badge--release">v{{ rel.version }}</span>
         </div>
-
       </article>
     {% endfor %}
   </div>
