@@ -175,3 +175,20 @@
     display: none;
   }
 }
+
+
+/* ============================================================
+   TRADUCTION DU TITRE
+   ============================================================
+   Affichée entre crochets après le titre original
+   quand la langue de publication diffère de la langue du site.
+   Ex : [Introduction to minimalist semantics] après le titre FR
+   ============================================================ */
+
+.pub-entry__translation {
+  display: block;
+  font-size: var(--text-xs);
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: var(--space-1);
+}
