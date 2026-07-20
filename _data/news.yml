@@ -7,6 +7,26 @@
 # Les 3 premières entrées s'affichent sur la homepage
 # ============================================================
 
+- id: news_wrasci_v0-1-0_2026
+  year: 2026
+  month: "July"
+  type: release
+  class: DSL
+  title:
+    en: "WRASCI (WRiting ASCii Ipa) v0.1.0"
+    fr: "WRASCI (WRiting ASCii Ipa) v0.1.0"
+  url: "https://github.com/wriml/wrasci/releases/tag/v1.0.0"
+
+- id: news_cssyntax_v0-1-0_2026
+  year: 2026
+  month: "July"
+  type: release
+  class: LaTeX package
+  title:
+    en: "cssyntax LaTeX Package v0.1.0"
+    fr: "Paquet LaTeX cssyntax v0.1.0"
+  url: "https://github.com/dbjoshua/cssyntax/releases/tag/v0.1.0"
+
 - id: news_wriml_org_2026
   year: 2026
   month: "May"
