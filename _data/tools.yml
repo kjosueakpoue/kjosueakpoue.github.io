@@ -35,6 +35,33 @@
 # DSL — NOTATION FORMELLE
 # ------------------------------------------------------------
 
+- id: wrasci
+  type: dsl
+  status: beta
+  name: "WRASCI"
+  fullname:
+    en: "WRASCI — Writing ASCII IPA Encoding Standard"
+    fr: "WRASCI — Norme d'encodage ASCII pour l'Alphabet Phonétique International"
+  description:
+    en: >
+      WRASCI (WRiting ASCii Ipa) is a deterministic ASCII encoding standard for the
+      International Phonetic Alphabet (IPA). Designed for plain-text linguistic
+      data representation and typesetting pipelines, it maps phonetic symbols using
+      systematic geometric suffix rules (e.g., character inversions, reversals, and
+      diacritic modifiers), enabling unambiguous IPA input on standard keyboards
+      without special software tools.
+    fr: >
+      WRASCI (WRiting ASCii Ipa) est une norme d'encodage ASCII déterministe pour
+      l'Alphabet Phonétique International (API). Conçue pour la représentation de
+      données linguistiques en texte brut et les chaînes de traitement éditoriales,
+      elle associe les symboles phonétiques au moyen de règles de suffixation
+      géométriques systématiques (inversions, renversements, diacritiques), permettant
+      une saisie non ambiguë de l'API sur tout clavier standard.
+  version_current: "0.2.0"
+  url_site: ""
+  url_github: "https://github.com/wriml/wrasci/releases/tag/v1.0.0"
+  related: "wriml"
+
 - id: phi
   type: dsl
   status: in-development
@@ -66,6 +93,37 @@
 # ------------------------------------------------------------
 # PACKAGES LATEX
 # ------------------------------------------------------------
+
+- id: cssyntax
+  type: package
+  status: stable
+  name: "cssyntax"
+  platform: "LaTeX"
+  fullname:
+    en: "cssyntax — Normalization and Readability for Internal TeX/LaTeX Control Sequences"
+    fr: "cssyntax — Normalisation et lisibilité des séquences de contrôle internes TeX/LaTeX"
+  description:
+    en: >
+      The cssyntax package introduces a unified syntax layer for LaTeX package
+      development, designed to structure and clarify the naming of internal commands.
+      By temporarily extending the scope of the _, :, and / characters, it enables
+      authors to formalize control sequences using an explicit hierarchical convention
+      (container_module_type_subtype/description). cssyntax provides a set of high-level,
+      self-documenting aliases for core TeX and LaTeX2e primitives, offering developers
+      a modern, readable, and domain-agnostic foundation for writing robust TeX code.
+    fr: >
+      Le paquet cssyntax introduit une couche syntaxique unifiée pour le développement
+      de paquets LaTeX, pensée pour structurer et clarifier le nommage des commandes
+      internes. En étendant temporairement la portée des caractères _, : et /, il permet
+      de formaliser les séquences de contrôle selon une convention hiérarchique explicite
+      (conteneur_module_type_sous-type/description). cssyntax fournit un jeu d'alias
+      haut niveau et auto-documentés pour les primitives TeX et LaTeX2e fondamentales,
+      offrant ainsi aux auteurs un socle moderne, lisible et agnostique pour l'écriture
+      de code TeX robuste.
+  support_for: 
+  url_github: "https://github.com/dbjoshua/cssyntax/releases/tag/v0.1.2"
+  url_ctan: 
+  version_current: "0.1.0"
 
 - id: math4lin
   type: package
