@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV – Kouamé Josué Akpoué, PhD</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ─────────────────────────────────────────────── */
+:root {
+  --canard:    #0C857A;
+  --canard-dk: #096B62;
+  --turq:      #64CCCC;
+  --turq-lt:   #D6F0F0;
+  --ivoire:    #FFFFF7;
+  --dark:      #021A18;
+  --gray:      #717A7A;
+  --gray-lt:   #EEF0F0;
+  --white:     #FFFFFF;
+  --radius:    7px;
+  --radius-sm: 4px;
+}
+
+/* ── RESET & BASE ────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 10.5pt; }
+
+body {
+  font-family: 'Fira Sans', 'Arial', sans-serif;
+  font-weight: 300;
+  color: var(--dark);
+  background: var(--ivoire);
+  line-height: 1.5;
+}
+
+/* ── PAGE (print) ────────────────────────────────────────── */
+@page {
+  size: A4;
+  margin: 18mm 18mm 18mm 18mm;
+}
+
+@media print {
+  body { background: white; }
+  .page-break { page-break-before: always; }
+  .no-break { page-break-inside: avoid; }
+}
+
+/* ── LAYOUT ──────────────────────────────────────────────── */
+.page {
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 18mm;
+  background: white;
+  min-height: 297mm;
+}
+
+/* ── BANDEAU CV ───────────────────────────────────────── */
+.cvmention-banner {
+  background: var(--canard);
+  color: white;
+  text-align: center;
+  padding: 5px 12px;
+  border-radius: var(--radius);
+  font-size: 9pt;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: 6mm;
+}
+
+/* ── NOM & HEADLINE ──────────────────────────────────────── */
+.name-block {
+  text-align: center;
+  margin-bottom: 5mm;
+}
+.name-block h1 {
+  font-size: 22pt;
+  font-weight: 600;
+  color: var(--canard);
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+.tagline-box {
+  background: var(--gray-lt);
+  border-radius: var(--radius);
+  padding: 3mm;
+  text-align: center;
+  font-size: 9.5pt;
+  font-weight: 400;
+  color: var(--dark);
+  margin: 4mm 0 6mm 0;
+  border-left: 3px solid var(--canard);
+}
+
+/* ── INFO GRID (1 ligne compacte) ────────────────────────── */
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4mm;
+  margin-bottom: 7mm;
+  background: var(--turq-lt);
+  border-radius: var(--radius);
+  padding: 3mm 4mm;
+  font-size: 8.5pt;
+}
+.info-item {
+  display: flex;
+  gap: 4px;
+}
+.info-item .label {
+  font-weight: 500;
+  color: var(--canard-dk);
+}
+.info-item a {
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 400;
+}
+.info-item a:hover {
+  text-decoration: underline;
+  color: var(--canard);
+}
+
+/* ── SECTIONS ────────────────────────────────────────────── */
+.section {
+  margin-bottom: 6mm;
+}
+
+.section-title {
+  font-size: 10pt;
+  font-weight: 600;
+  color: var(--canard);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid var(--canard);
+  margin-bottom: 4mm;
+}
+
+.subsection-title {
+  font-size: 9pt;
+  font-weight: 500;
+  color: var(--dark);
+  font-style: italic;
+  margin: 4mm 0 2mm 0;
+}
+
+/* ── HIGHLIGHTS & TEXT BLOCKS ────────────────────────────── */
+.text-block {
+  font-size: 9pt;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 4mm;
+}
+
+.bullets-list {
+  list-style: none;
+  margin-bottom: 4mm;
+}
+.bullets-list li {
+  font-size: 9pt;
+  line-height: 1.5;
+  margin-bottom: 2mm;
+  padding-left: 5mm;
+  position: relative;
+}
+.bullets-list li::before {
+  content: "•";
+  color: var(--canard);
+  font-weight: bold;
+  position: absolute;
+  left: 1mm;
+}
+
+/* ── TABLEAU DIPLÔMES ────────────────────────────────────── */
+.table-diplomes {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid #D0DEDD;
+  font-size: 8.5pt;
+  margin-bottom: 2mm;
+}
+.table-diplomes th {
+  background: var(--canard);
+  color: white;
+  font-weight: 500;
+  padding: 6px 10px;
+  text-align: left;
+  font-size: 8.5pt;
+}
+.table-diplomes td {
+  padding: 6px 10px;
+  border-bottom: 1px solid #E8EEEE;
+  vertical-align: top;
+  line-height: 1.5;
+}
+.table-diplomes tr:last-child td { border-bottom: none; }
+.table-diplomes tr:nth-child(even) td { background: #F5FAFA; }
+.table-diplomes tr.highlight td { background: var(--turq-lt); }
+.table-diplomes td .mention {
+  color: var(--canard-dk);
+  font-weight: 500;
+  font-size: 8pt;
+  display: block;
+  margin-top: 1px;
+}
+
+/* ── THÈSE BOX ───────────────────────────────────────────── */
+.these-box {
+  background: var(--gray-lt);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--canard);
+  padding: 4mm 5mm;
+  font-size: 8.8pt;
+  line-height: 1.75;
+}
+.these-box .field { display: grid; grid-template-columns: 140px 1fr; gap: 4px; margin-bottom: 1px; }
+.these-box .field-label { font-weight: 500; color: var(--dark); }
+.these-box .field-value { color: var(--dark); }
+.these-box .jury-list { margin-top: 3mm; }
+.these-box .jury-label { font-weight: 500; margin-bottom: 1mm; }
+.these-box .jury-item { display: flex; gap: 6px; font-size: 8.2pt; }
+.these-box .jury-num { color: var(--canard); font-weight: 500; min-width: 14px; }
+
+/* ── ENTRÉES (année + contenu) ───────────────────────────── */
+.entries { display: flex; flex-direction: column; gap: 3mm; }
+.entry {
+  display: grid;
+  grid-template-columns: 85px 1fr;
+  gap: 4mm;
+  align-items: start;
+}
+.entry-year {
+  font-size: 8.5pt;
+  color: var(--gray);
+  font-weight: 400;
+  padding-top: 1px;
+  text-align: right;
+}
+.entry-body { font-size: 8.8pt; line-height: 1.5; }
+.entry-body strong { font-weight: 500; }
+.entry-body .meta {
+  font-style: italic;
+  color: var(--gray);
+  font-size: 8pt;
+  margin-top: 1px;
+}
+
+/* ── PUBLICATIONS ────────────────────────────────────────── */
+.pub-list { display: flex; flex-direction: column; gap: 3mm; }
+.pub-item { display: grid; grid-template-columns: 28px 1fr; gap: 3mm; font-size: 8.8pt; line-height: 1.5; }
+.pub-num { color: var(--canard); font-weight: 500; text-align: right; padding-top: 1px; }
+.pub-ref em { font-style: italic; }
+.pub-ref .journal { font-weight: 400; color: var(--canard-dk); }
+.pub-ref a { color: var(--canard); text-decoration: none; font-size: 8pt; }
+.pub-ref a:hover { text-decoration: underline; }
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.page-footer {
+  margin-top: 8mm;
+  padding-top: 3mm;
+  border-top: 1px solid #D0DEDD;
+  display: flex;
+  justify-content: space-between;
+  font-size: 7.5pt;
+  color: var(--gray);
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── BANDEAU CAMES ────────────────────────────────────── -->
+  <div class="cvmention-banner">
+    CURRICULUM VITAE
+  </div>
+    
+  <!-- ── NOM & TITRE ──────────────────────────────────────── -->
+  <div class="name-block">
+    <h1>Kouamé Josué Akpoué, PhD</h1>
+  </div>
+
+  <!-- ── FICHE IDENTITÉ COMPACTE ────────────────────────────── -->
+  <div class="info-grid no-break">
+    <div class="info-item"><span class="label">Academic Status:</span> Available for Faculty Appointment</div>
+    <div class="info-item"><span class="label">Location:</span> Abidjan, Côte d'Ivoire</div>
+    <div class="info-item"><span class="label">Email:</span> <a href="mailto:josueakpoue@gmail.com">josueakpoue@gmail.com</a></div>
+    <div class="info-item"><span class="label">Web:</span> <a href="https://kjosueakpoue.github.io" target="_blank">kjosueakpoue.github.io</a></div>
+    <div class="info-item"><span class="label">GitHub:</span> <a href="https://github.com/dbjoshua" target="_blank">github.com/dbjoshua</a></div>
+  </div>
+
+  <!-- ── TAGLINE ──────────────────────────────────────────── -->
+  <div class="tagline-box no-break">
+    <strong>Tagline:</strong> PhD - Theoretical and Documentary Linguistics - Formal Semantics - Formal Languages Design
+  </div>
+
+  <!-- ── PROFILE SUMMARY ──────────────────────────────────── -->
+  <div class="section no-break">
+    <div class="section-title">🎯 Profile Summary</div>
+    <p class="text-block">
+      Doctoral Researcher in Linguistics specializing in formal semantics, with a primary focus on semantic composition and decomposition (at the word, phrase, sentence, and discourse levels). Experienced in testing theoretical semantic models against empirical, primary data from understudied languages (including Ivorian French, Baoulé, and other Kwa and Ivorian languages). Combines rigorous fieldwork methods with practical, self-taught engineering skills in formal language design (custom DSLs, human-oriented markup syntax) and open science architectures. Equipped to contribute immediately to cutting-edge research and innovative teaching in theoretical semantics and digital humanities.
+    </p>
+  </div>
+
+  <!-- ── KEY HIGHLIGHTS ───────────────────────────────────── -->
+  <div class="section no-break">
+    <div class="section-title">🚀 Key Highlights</div>
+    <ul class="bullets-list">
+      <li><strong>From Field Data to Formal Theory:</strong> Rare dual expertise bridging empirical language documentation and field methodology with formal semantic testing on understudied non-Indo-European languages.</li>
+      <li><strong>Applied Formal Languages & Tool Design:</strong> Pragmatic designer of human-oriented, machine-readable specifications—creator of custom markup languages (<em>WRIML</em>), annotation/archiving systems (<em>WRIDAL</em>, <em>WRIMLIFT</em>), ASCII phonetic encodings (<em>WRASCI</em>), and scientific DSLs (<em>phi</em>).</li>
+      <li><strong>Open Science & Infrastructure Advocate:</strong> Founder of <em>CILARCO</em> (Côte d'Ivoire Linguistique Archive Ouverte), applying FAIR data principles, Git workflows, and Zenodo integration for sustainable African language preservation.</li>
+    </ul>
+  </div>
+
+  <!-- ── DIPLÔMES / EDUCATION ─────────────────────────────── -->
+  <div class="section">
+    <div class="section-title">🎓 Education</div>
+    <table class="table-diplomes no-break">
+      <thead>
+        <tr>
+          <th style="width:25%">Degree</th>
+          <th style="width:45%">Specialization / Track</th>
+          <th style="width:30%">Institution & Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Bachelor's Degree (Licence)</strong></td>
+          <td>Linguistics (Sciences du langage)</td>
+          <td>Université Félix Houphouët-Boigny, 2014</td>
+        </tr>
+        <tr>
+          <td><strong>Master's Degree</strong></td>
+          <td>
+            Linguistics (Sciences du langage)<br>
+            <span class="italic small">Track: Language Description and Documentation</span>
+            <span class="mention">Honors: Highest Honors (Très Bien - 18/20)</span>
+          </td>
+          <td>
+            Université Félix Houphouët-Boigny, 2016<br>
+            <span class="small gray">Advisor: Prof. BOGNY Yapo Joseph</span>
+          </td>
+        </tr>
+        <tr class="highlight">
+          <td><strong>PhD (Doctorat Unique)</strong></td>
+          <td>
+            <strong>PhD in Linguistics (Sciences du langage)</strong><br>
+            <span class="italic small">Track: Language Description and Documentation</span>
+            <span class="mention">Honors: Highest Honors with Jury Congratulations</span>
+          </td>
+          <td>
+            Université Félix Houphouët-Boigny, 2024<br>
+            <span class="small gray">Advisor: Prof. BOGNY Yapo Joseph</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── THÈSE BOX / DISSERTATION ──────────────────────────── -->
+  <div class="section no-break">
+    <div class="section-title">🔬 Doctoral Dissertation</div>
+    <div class="these-box">
+      <div class="field"><span class="field-label">Title:</span><span class="field-value italic">Tense, Aspect, and Modality in Kwa Languages</span></div>
+      <div class="field"><span class="field-label">Discipline:</span><span class="field-value">Linguistics – Descriptive and Formal Linguistics</span></div>
+      <div class="field"><span class="field-label">Defense Year:</span><span class="field-value">2024 – Université Félix Houphouët-Boigny, Abidjan</span></div>
+      <div class="field"><span class="field-label">Advisor:</span><span class="field-value">Prof. BOGNY Yapo Joseph (UFHB)</span></div>
+      <div class="jury-list">
+        <div class="jury-label">Jury Panel:</div>
+        <div class="jury-item"><span class="jury-num">1.</span><span>Prof. KOUADIO-N'GUESSAN Jérémie – <strong>Chair</strong> – ASCAD</span></div>
+        <div class="jury-item"><span class="jury-num">2.</span><span>Prof. BOGNY Yapo Joseph – <strong>Advisor</strong> – UFHB</span></div>
+        <div class="jury-item"><span class="jury-num">3.</span><span>Dr KACOU Fôba Antoine – <strong>Member</strong> – UFHB</span></div>
+        <div class="jury-item"><span class="jury-num">4.</span><span>Dr YANGRA Aboi François – <strong>Member</strong> – UAO</span></div>
+        <div class="jury-item"><span class="jury-num">5.</span><span>Dr KOUADIO Adou Pierre Kouakou – <strong>Member</strong> – UFHB</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RESEARCH INTERESTS ─────────────────────────────────── -->
+  <div class="section no-break">
+    <div class="section-title">🔬 Research Interests</div>
+    <ul class="bullets-list">
+      <li><strong>Formal Semantics:</strong> Semantic compositionality and decompositionality (analyzing how sub-lexical and complex units assemble meaning across words, phrases, sentences, and discourse).</li>
+      <li><strong>Empirical & Typological Testing:</strong> Testing, refining, and extending formal semantic models using empirical data from understudied language structures (Kwa, Ivorian languages, Ivorian French).</li>
+      <li><strong>Linguistic Data Architecture:</strong> Design principles for human-centric, structured formats for primary linguistic data annotation and preservation.</li>
+    </ul>
+  </div>
+
+  <!-- ── FONCTIONS / TEACHING ────────────────────────────────── -->
+  <div class="section">
+    <div class="section-title">🏫 Higher Education Teaching Experience</div>
+
+    <div class="subsection-title">A. Supervised Teaching & Assistantships (Teaching Assistant)</div>
+    <div class="entries">
+      <div class="entry no-break">
+        <div class="entry-year">2017–2019</div>
+        <div class="entry-body"><strong>Introduction to Formal Semantics</strong> | UFHB, Abidjan<div class="meta">Level: Undergraduate — Lecture Course</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2017–2018</div>
+        <div class="entry-body"><strong>Semantics of Ivorian Languages</strong> | UFHB, Abidjan<div class="meta">Level: Master's</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2016–2018</div>
+        <div class="entry-body"><strong>Minimalist Semantics</strong> | UFHB, Abidjan<div class="meta">Level: Master's</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2017–2018</div>
+        <div class="entry-body"><strong>Minimalist Syntax</strong> | UFHB, Abidjan<div class="meta">Level: Master's</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2017</div>
+        <div class="entry-body"><strong>Intensional Semantics</strong> | UFHB, Abidjan<div class="meta">Level: Master's</div></div>
+      </div>
+    </div>
+
+    <div class="subsection-title">B. Led Seminars & Workshops</div>
+    <div class="entries">
+      <div class="entry no-break">
+        <div class="entry-year">2017</div>
+        <div class="entry-body"><strong>Semantics Workshop on Negro-African Languages</strong> | The WeTalk, UFHB, Abidjan<div class="meta">Weekly Seminar — Target: Master's and Doctoral Students</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2015</div>
+        <div class="entry-body"><strong>Introductory Seminar on the Minimalist Program</strong> | UFHB, Abidjan<div class="meta">Target: Master's and Doctoral Students</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2018</div>
+        <div class="entry-body"><strong>Introduction to Minimalist Syntax</strong> | The WeTalk, UFHB, Abidjan<div class="meta">Introductory Workshops on Minimalism — Target: Doctoral Students</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2018</div>
+        <div class="entry-body"><strong>Semantics in the Minimalist Program</strong> | The WeTalk, UFHB, Abidjan<div class="meta">Introductory Workshops on Minimalism — Target: Doctoral Students</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2016</div>
+        <div class="entry-body"><strong>Introduction to Minimalist Semantics</strong> | The WeTalk, UFHB, Abidjan<div class="meta">Introductory Workshop on the Minimalist Program — Target: Master's and Doctoral Students</div></div>
+      </div>
+    </div>
+
+    <div class="subsection-title">C. Student Co-supervision (via Supervised Tutoring)</div>
+    <div class="entries">
+      <div class="entry no-break">
+        <div class="entry-year">2018–2020</div>
+        <div class="entry-body"><span class="italic">Faboumy Fifavy Ruth.</span> <strong>Semantic aspects of nominal determination in Bété</strong><div class="meta">Master dissertation — Advisor: Prof. Bogny Yapo Joseph</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2016–2018</div>
+        <div class="entry-body"><span class="italic">Konan-Bosson Ange Christelle.</span> <strong>Semantics of noun phrases in Wobé: A formal introduction</strong><div class="meta">Master dissertation — Advisor: Prof. Bogny Yapo Joseph</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2017–2019</div>
+        <div class="entry-body"><span class="italic">Ahoundjo-Della Rita Alexise.</span> <strong>Internal clause structure and constituent displacement in Akyé</strong><div class="meta">Master dissertation — Advisor: Prof. Bogny Yapo Joseph</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2023– Present</div>
+        <div class="entry-body"><span class="italic">Atteby-Yapi Gohon Fabienne Stéphanie.</span> <strong>Nominal syntax in Ega</strong><div class="meta">Doctoral thesis (In progress) — Advisor: Prof. Ahoua Firmin</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TECHNICAL SKILLS ──────────────────────────────────── -->
+  <div class="section no-break">
+    <div class="section-title">🛠️ Technical & Methodological Skills</div>
+    <ul class="bullets-list">
+      <li><strong>Linguistic & Fieldwork Methods:</strong> Primary data collection, IPA transcription standards, corpus building, grammar documentation, elicitations.</li>
+      <li><strong>Software & Markups:</strong> LaTeX (Advanced macro/package design, expl3, amsmath), Markdown, XML, R (Data analysis & visualization).</li>
+      <li><strong>Formal Language Design & Tools:</strong> Custom DSL syntax specification, file format design, parsing logic for scientific/linguistic workflows.</li>
+      <li><strong>Digital Humanities & DevOps:</strong> Git/GitHub version control, Zenodo archiving, DOI minting, CC BY 4.0 open data licensing.</li>
+      <li><strong>Operating Systems:</strong> ChromeOS, Linux (Ubuntu, Fedora).</li>
+    </ul>
+  </div>
+
+  <!-- ── SOFTWARE PROJECTS ──────────────────────────────────── -->
+  <div class="section">
+    <div class="section-title">🛠️ Software Standards & Language Projects</div>
+    <div class="entries">
+      <div class="entry no-break">
+        <div class="entry-year">WRIML</div>
+        <div class="entry-body"><strong>WRIting Markup Language</strong><br>A novel, human-oriented markup language designed to match XML in rigor and extensibility while maximizing readability and authoring speed.</div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">Annotation</div>
+        <div class="entry-body"><strong>WRIDAL & WRIMLIFT</strong><br>Specialized tools and specifications engineered for efficient annotation, structured processing, and long-term archiving of primary linguistic data.</div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">WRASCI</div>
+        <div class="entry-body"><strong>WRiting ASCii Ipa</strong><br>An ASCII-input encoding standard mapping International Phonetic Alphabet (IPA) characters using strict geometric suffix rules (inversion, reversal, rounding, barring).</div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">The <em>phi</em> Project</div>
+        <div class="entry-body"><strong>Scientific DSL</strong><br>A domain-specific language (DSL) tailored for scientific writing and automated multi-platform LaTeX compilation.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PUBLICATIONS ──────────────────────────────────────── -->
+  <div class="section">
+    <div class="section-title">📑 Selected Publications & Productions</div>
+
+    <div class="subsection-title">A. Peer-Reviewed Journal Articles</div>
+    <div class="pub-list">
+      <div class="pub-item no-break"><div class="pub-num">[1]</div><div class="pub-ref">Akpoué K. J. (2025). <em>Introduction à la sémantique minimaliste.</em> <span class="journal">Ziglôbitha,</span> n° 16, vol. 3, pp. 319–338.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[2]</div><div class="pub-ref">Akpoué K. J. & Kpami Boni Carlos Mozer (2022). <em>Structure de la coordination conjonctive des DP en Modjukru.</em> <span class="journal">Revue du LTML,</span> n° 18, pp. 206–228.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[3]</div><div class="pub-ref">Akpoué K. J. (2022). <em>De la signification des noms et pronoms propres.</em> <span class="journal">Revue du LTML</span> (Hors-série n° 1 : Actes ABILANG 4 – 2021), pp. 127–144.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[4]</div><div class="pub-ref">Akpoué K. J. (2022). <em>Pour une sémantique formelle componentielle : Introduction à la sémantique néo-componentielle.</em> <span class="journal">Revue du LTML</span> (Hors-série n° 1 : Actes ABILANG 4 – 2021), pp. 5–26.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[5]</div><div class="pub-ref">Akpoué K. J. & Kouakou N'Guessan Glwadys (2022). <em>Remarques sur la définitude en Baoulé.</em> <span class="journal">Revue du LTML</span> (Hors-série n° 1 : Actes ABILANG 4 – 2021), pp. 145–165.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[6]</div><div class="pub-ref">Akpoué K. J. & Kouakou N'Guessan Glwadys (2020). <em>La définitude en baoulé : une introduction formelle.</em> In : <span class="journal">The roles of West-African languages: Development and integration.</span> Paris : L'Harmattan, Col. Études africaines.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[7]</div><div class="pub-ref">Akpoué K. J., Bogny Yapo J. & Kpami Boni Carlos Mozer (2018). <em>etʃi et marquage du temps dans le DP en modjukru.</em> <span class="journal">Annales de la Faculté des Lettres et Sciences Humaines,</span> 48/A, pp. 41–56.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[8]</div><div class="pub-ref">Akpoué K. J. & Kouakou N'Guessan Glwadys (2018). <em>Attitude des locuteurs et vitalité des langues : cas du Bere, langue en danger de Côte d'Ivoire.</em> <span class="journal">Revue Della/Afrique,</span> 1.2., pp. 153–169.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[9]</div><div class="pub-ref">Akpoué K. J. (2018). <em>Elicitation des morphèmes de temps dans les langues naturelles via le test de focalisation du temps : Cas du baoulé et du wobé.</em> <span class="journal">Revue du CERLS</span> (Hors-Série : Actes du 2e colloque « Le verbe dans tous les sens », oct. 2018), vol. 2, pp. 25–34.</div></div>
+    </div>
+
+    <div class="subsection-title">B. Edited Conference Proceedings</div>
+    <div class="pub-list">
+      <div class="pub-item no-break"><div class="pub-num">[10]</div><div class="pub-ref">Akpoué K. J. & Kouakou N'Guessan Gwladys (2018). <em>Encodage lexical des TAM dans les langues naturelles : cas du Bere et du Baoulé.</em> In : <span class="journal">España en contacto con Africa, sus pueblos y sus Culturas,</span> pp. 13–25.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[11]</div><div class="pub-ref">Akpoué K. J. & Ahoundjo-Della Rita Alexise (2018). <em>Coordination et Subordination dans quelques langues Kwa.</em> In : <span class="journal">Structure du Nom, du SN et de la Phrase dans les langues Volta-Congo et Mande,</span> pp. 215–224.</div></div>
+    </div>
+
+    <div class="subsection-title">C. Oral Conference Presentations (Unpublished)</div>
+    <div class="pub-list">
+      <div class="pub-item no-break"><div class="pub-num">[12]</div><div class="pub-ref">Akpoué K. J. (2023). <em>Quand les adverbes et les clauses adverbiales révèlent les temps du baoulé.</em> Colloque international de Bonoua, Oct. 3–4, 2023, UFHB, Abidjan.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[13]</div><div class="pub-ref">Akpoué K. J. (2023). <em>Remarks on the syntax of reported speech in Baule.</em> Reported Discourse Within Grammar, July 5–7, 2023, CNRS, Villejuif.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[14]</div><div class="pub-ref">Akpoué K. J. (2023). <em>Strong articles as topic markers.</em> ALS-LSA Workshop, LSA Summer Institute, University of Massachusetts Amherst.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[15]</div><div class="pub-ref">Akpoué K. J. (2019). <em>Remarques sur la sémantique des noms propres.</em> II Coloquio, UFHB, Abidjan.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[16]</div><div class="pub-ref">Akpoué K. J. (2019). <em>Comitative coordinators: some empirical evidences.</em> 31st West African Languages Congress, UFHB, Abidjan.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[17]</div><div class="pub-ref">Akpoué K. J. (2018). <em>De la proéminence aspectuelle des langues africaines.</em> 3rd ABILANG Conference, Université Alassane Ouattara, Bouaké.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[18]</div><div class="pub-ref">Akpoué K. J. (2018). <em>Temps passés et temps non-finis dans les langues Kwa et Kru.</em> Colloque de Bonoua 2, Bonoua, Côte d'Ivoire.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[19]</div><div class="pub-ref">Akpoué K. J. & Agnissoni Sidoine (2018). <em>Temps, aspects et modalité en nouchi.</em> Colloque de Bonoua 2, Bonoua, Côte d'Ivoire.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[20]</div><div class="pub-ref">Akpoué K. J. (2017). <em>Coordination in Kwa and Mande languages.</em> 30th West African Languages Congress / 10th LAG, University of Education, Winneba, Ghana.</div></div>
+      <div class="pub-item no-break"><div class="pub-num">[21]</div><div class="pub-ref">Akpoué K. J. (2017). <em>Les séquences coordonnées dans quelques langues mandé.</em> CLG2016 Conference / Henri Frei Workshop, University of Geneva.</div></div>
+    </div>
+
+    <div class="subsection-title">D. Web Publications & Online Scientific Resources</div>
+    <div class="pub-list">
+      <div class="pub-item no-break"><div class="pub-num">[22]</div><div class="pub-ref">Akpoué K. J. (2017). <em>Linguistic expert for Baoulé (Agba) – TerraLing SSWL Group.</em> <a href="http://test.terraling.com/groups/7" target="_blank">terraling.com/groups/7</a></div></div>
+      <div class="pub-item no-break"><div class="pub-num">[23]</div><div class="pub-ref">Akpoué K. J. (2017). <em>Linguistic expert for Baoulé (Agba) – TerraLing Conjunction and Disjunction Group.</em> <a href="http://test.terraling.com/groups/8" target="_blank">terraling.com/groups/8</a></div></div>
+      <div class="pub-item no-break"><div class="pub-num">[24]</div><div class="pub-ref">Akpoué K. J. (2017). <em>Linguistic expert for Ivorian French – TerraLing SSWL Group.</em> <a href="http://test.terraling.com/groups/7" target="_blank">terraling.com/groups/7</a></div></div>
+      <div class="pub-item no-break"><div class="pub-num">[25]</div><div class="pub-ref">Akpoué K. J. (2017). <em>Linguistic expert for Ivorian French – TerraLing Conjunction and Disjunction Group.</em> <a href="http://test.terraling.com/groups/8" target="_blank">terraling.com/groups/8</a></div></div>
+      <div class="pub-item no-break"><div class="pub-num">[26]</div><div class="pub-ref">Akpoué K. J. (2024). <em>beans&amp;sticks pictures.</em> GitHub: <a href="https://github.com/dbjoshua/visualmaterials" target="_blank">github.com/dbjoshua/visualmaterials</a></div></div>
+      <div class="pub-item no-break"><div class="pub-num">[27]</div><div class="pub-ref">Akpoué K. J. (2019 [pub. 2021]). <em>Storyboard « Aya » (v1.0.0).</em> Zenodo. <a href="https://doi.org/10.5281/zenodo.57698141" target="_blank">doi.org/10.5281/zenodo.57698141</a></div></div>
+      <div class="pub-item no-break"><div class="pub-num">[28]</div><div class="pub-ref">Akpoué K. J. (2020). <em>Dots pictures.</em> GitHub: <a href="https://github.com/dbjoshua/visualmaterials" target="_blank">github.com/dbjoshua/visualmaterials</a></div></div>
+      <div class="pub-item no-break"><div class="pub-num">[29]</div><div class="pub-ref">Akpoué K. J. (2020). <em>Circ &amp; Squares pictures.</em> GitHub: <a href="https://github.com/dbjoshua/visualmaterials" target="_blank">github.com/dbjoshua/visualmaterials</a></div></div>
+      <div class="pub-item no-break"><div class="pub-num">[30]</div><div class="pub-ref">Akpoué K. J. (2020). <em>Storyboard « Party » (1.0.0).</em> Zenodo. <a href="https://doi.org/10.5281/zenodo.11378361" target="_blank">doi.org/10.5281/zenodo.11378361</a></div></div>
+      <div class="pub-item no-break"><div class="pub-num">[31]</div><div class="pub-ref">Akpoué K. J. (2020). <em>Storyboard « Coffee » (1.0.0).</em> Zenodo. <a href="https://doi.org/10.5281/zenodo.11378238" target="_blank">doi.org/10.5281/zenodo.11378238</a></div></div>
+      <div class="pub-item no-break"><div class="pub-num">[32]</div><div class="pub-ref">Akpoué K. J. (2020). <em>Storyboard « Courses » (1.0.0).</em> Zenodo. <a href="https://doi.org/10.5281/zenodo.11377977" target="_blank">doi.org/10.5281/zenodo.11377977</a></div></div>
+    </div>
+  </div>
+
+  <!-- ── EXPÉRIENCE DE RECHERCHE / FIELDWORK ──────────────── -->
+  <div class="section">
+    <div class="section-title">🔬 Fieldwork & Research Projects</div>
+    <div class="entries">
+      <div class="entry no-break">
+        <div class="entry-year">2020–2023</div>
+        <div class="entry-body"><strong>Collaborator – "Typology of Cumulativity" Project</strong><div class="meta">Principal Investigator: Prof. Dr. Viola Schmitt (MIT)</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2019</div>
+        <div class="entry-body"><strong>Linguistic Fieldwork on Aburé in Ebra (Côte d'Ivoire)</strong><div class="meta">Initiator: Kôkô Irène — Collaborators: Assièhoussou Aya Naomie, Tokpa Vénance</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2018</div>
+        <div class="entry-body"><strong>Field Assistant – Prof. Jeffrey Heath (University of Michigan)</strong><div class="meta">Fieldwork on Bere grammar in Bonosso</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2018</div>
+        <div class="entry-body"><strong>Fieldwork on TAM and Information Structure of Modjukru in Kpas</strong><div class="meta">With: Kpami Boni Carlos Mozer & Koffi Koffi</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2017</div>
+        <div class="entry-body"><strong>Fieldwork on Bere Grammar in Bonosso</strong><div class="meta">Director: Prof. Bogny Yapo Joseph</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RESPONSABILITÉS / SERVICE ───────────────────────────── -->
+  <div class="section">
+    <div class="section-title">🌐 Academic Service & Leadership</div>
+    <div class="entries">
+      <div class="entry no-break">
+        <div class="entry-year">2026–Present</div>
+        <div class="entry-body"><strong>Founder, CILARCO GitHub Organization</strong><div class="meta">Managing an open-access repository platform dedicated to distributing public linguistic corpora under CC BY 4.0 licenses using CITATION.cff workflows.</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2022–Present</div>
+        <div class="entry-body"><strong>President of WeTalk</strong><div class="meta">Platform for scientific presentations and early-career researcher training — UFHB, Abidjan</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2019</div>
+        <div class="entry-body"><strong>Secretariat Member – 31st West African Languages Congress</strong><div class="meta">UFHB, Abidjan, Côte d'Ivoire</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2018</div>
+        <div class="entry-body"><strong>Secretariat Member – 3rd ABILANG Conference</strong><div class="meta">Université Alassane Ouattara, Bouaké, Côte d'Ivoire</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2018</div>
+        <div class="entry-body"><strong>Administrator – TerraLing SSWL Group</strong><div class="meta">https://terraling.com/groups/7</div></div>
+      </div>
+      <div class="entry no-break">
+        <div class="entry-year">2017</div>
+        <div class="entry-body"><strong>Organizer – Seminar "SSWL: Comparative Syntax of Ivorian Languages"</strong><div class="meta">UFHB / UCLA, Abidjan</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MISSIONS ─────────────────────────────────────────── -->
+  <div class="section no-break">
+    <div class="section-title">✈️ Scientific Missions & Travel</div>
+    <div class="entries">
+      <div class="entry"><div class="entry-year">July 2023</div><div class="entry-body">Conference "Reported Discourse Within Grammar" — CNRS, Villejuif, France</div></div>
+      <div class="entry"><div class="entry-year">July 2023</div><div class="entry-body">LSA Summer Institute — University of Massachusetts Amherst, USA</div></div>
+      <div class="entry"><div class="entry-year">Nov. 2017</div><div class="entry-body">30th West African Languages Congress — University of Education, Winneba, Ghana</div></div>
+      <div class="entry"><div class="entry-year">June 2017</div><div class="entry-body">CLG2016 Conference / Henri Frei Workshop — University of Geneva, Switzerland</div></div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <div class="page-footer">
+    <span>Kouamé Josué Akpoué, PhD</span>
+    <span>Academic Curriculum Vitae — kjosueakpoue.github.io</span>
+  </div>
+
+</div>
+</body>
+</html>
